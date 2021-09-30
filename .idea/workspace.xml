@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="" />
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="HomeWork1">
+      <change afterPath="$PROJECT_DIR$/boys/Misha" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boys/Sasha" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boys/Slawa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boys/Yurij" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/girls/Maria" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/girls/Tamara" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/girls/Vasylysa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -26,6 +45,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,8 +60,17 @@
       <option name="presentableId" value="Default" />
       <updated>1633008359997</updated>
       <workItem from="1633008362131" duration="11000" />
-      <workItem from="1633008560684" duration="431000" />
+      <workItem from="1633008560684" duration="2470000" />
+      <workItem from="1633020305437" duration="355000" />
     </task>
+    <task id="LOCAL-00001" summary="HomeWork1">
+      <created>1633009055843</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633009055843</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -54,5 +86,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HomeWork1" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork1" />
   </component>
 </project>
