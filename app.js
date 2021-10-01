@@ -11,7 +11,7 @@ const sortUsers = (gender, oldFolder, newFolder) => {
             return;
         }
 
-        data.forEach((value) => {
+        data.forEach(( value ) => {
             fs.readFile(path.join(oldFolder, value), (err, data) => {
                 if (err) {
                     console.log(err);
