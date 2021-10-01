@@ -32,7 +32,7 @@ const sortUsers = (gender, oldFolder, newFolder) => {
     });
 };
 
-sortUsers('male', pathToGirls, pathToBoys,);
+sortUsers('male', pathToGirls, pathToBoys);
 sortUsers('female', pathToBoys, pathToGirls);
 
 
