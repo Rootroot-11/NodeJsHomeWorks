@@ -19,6 +19,7 @@ const sortUsers = (gender, oldFolder, newFolder) => {
                 }
 
                 const user = JSON.parse(data.toString());
+
                 if (user.gender === gender) {
                     fs.rename(path.join(oldFolder, value), path.join(newFolder, value), err => {
                         if (err) {
