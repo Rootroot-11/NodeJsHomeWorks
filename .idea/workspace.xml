@@ -7,13 +7,12 @@
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="HomeWork1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boys/Misha" beforeDir="false" afterPath="$PROJECT_DIR$/users/boys/Misha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boys/Sasha" beforeDir="false" afterPath="$PROJECT_DIR$/users/boys/Sasha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boys/Slawa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boys/Yurij" beforeDir="false" afterPath="$PROJECT_DIR$/users/boys/Yurij" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/girls/Maria" beforeDir="false" afterPath="$PROJECT_DIR$/users/girls/Maria" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/girls/Tamara" beforeDir="false" afterPath="$PROJECT_DIR$/users/girls/Tamara" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/girls/Vasylysa" beforeDir="false" afterPath="$PROJECT_DIR$/users/girls/Vasylysa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/boys/Misha" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/boys/Sasha" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/boys/Yurij" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/girls/Maria" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/girls/Tamara" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/girls/Vasylysa" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +57,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\WebstormProjects\NodeJsHomeWork\users\girls" />
+      <recent name="C:\Users\Asus\WebstormProjects\NodeJsHomeWork\users\boys" />
       <recent name="C:\Users\Asus\WebstormProjects\NodeJsHomeWork\users" />
     </key>
   </component>
@@ -71,7 +72,10 @@
       <updated>1633008359997</updated>
       <workItem from="1633008362131" duration="11000" />
       <workItem from="1633008560684" duration="2470000" />
-      <workItem from="1633020305437" duration="6439000" />
+      <workItem from="1633020305437" duration="6458000" />
+      <workItem from="1633079065685" duration="2649000" />
+      <workItem from="1633081861262" duration="1241000" />
+      <workItem from="1633084434726" duration="4063000" />
     </task>
     <task id="LOCAL-00001" summary="HomeWork1">
       <created>1633009055843</created>
@@ -87,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633020674474</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HomeWork1">
+      <created>1633027116719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633027116719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
