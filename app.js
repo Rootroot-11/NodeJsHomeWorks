@@ -22,10 +22,6 @@ fs.mkdir(mkdirPathYoungerWoman, {recursive: true}, (err) => {
     console.log(err);
 });
 
-fs.appendFile(`${__dirname}/allUsers/manOlder20/Arseniy.txt`, 'Hello world22', (err) => {
-    console.log(err);
-});
-
 const users = [
     {name: "Sasha", gender: "male", age: 12},
     {name: "Yulia", gender: "female", age: 4},
