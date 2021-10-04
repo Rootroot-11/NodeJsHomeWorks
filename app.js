@@ -28,7 +28,7 @@ fs.appendFile(`${__dirname}/allUsers/manOlder20/Arseniy.txt`, 'Hello world22', (
 
 const users = [
     {name: "Sasha", gender: "male", age: 12},
-    {name: "Yulia", gender: "female", age: 25},
+    {name: "Yulia", gender: "female", age: 4},
     {name: "Oleh", gender: "male", age: 40},
     {name: "Arseniy", gender: "male", age: 45},
     {name: "Ivan", gender: "male", age: 19},
