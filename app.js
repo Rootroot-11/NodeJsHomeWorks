@@ -29,7 +29,7 @@ fs.appendFile(`${__dirname}/allUsers/manOlder20/Arseniy.txt`, 'Hello world22', (
 const users = [
     {name: "Sasha", gender: "male", age: 12},
     {name: "Yulia", gender: "female", age: 25},
-    {name: "Oleh", gender: "male", age: 10},
+    {name: "Oleh", gender: "male", age: 40},
     {name: "Arseniy", gender: "male", age: 45},
     {name: "Ivan", gender: "male", age: 19},
     {name: "Masha", gender: "female", age: 11},
@@ -37,7 +37,6 @@ const users = [
     {name: "Olha", gender: "female", age: 23},
     {name: "Misha", gender: "male", age: 29},
     {name: "Natasha", gender: "female", age: 42}
-
 ];
 
 
@@ -46,24 +45,24 @@ users.forEach(user => {
         fs.writeFile(path.join(__dirname, 'allUsers', 'manOlder20', `${user.name}.txt`), 
             JSON.stringify(user), err => {
                 console.log(err);
-            })
+            });
     }
     else if (user.gender === 'male' && user.age < 20) {
         fs.writeFile(path.join(__dirname, 'allUsers', 'manYounger20', `${user.name}.txt`), 
             JSON.stringify(user), err => {
                 console.log(err);
-            })
+            });
     }
     else if (user.gender === 'female' && user.age > 20) {
         fs.writeFile(path.join(__dirname, 'allUsers', 'womanOlder20', `${user.name}.txt`), 
             JSON.stringify(user), err => {
             console.log(err);
-        })
+        });
     }
     else if (user.gender === 'female' && user.age < 20) {
         fs.writeFile(path.join(__dirname, 'allUsers', 'womanYounger20', `${user.name}.txt`),
             JSON.stringify(user), err => {
                 console.log(err);
-            })
-    }
-})
+            });
+    };
+});

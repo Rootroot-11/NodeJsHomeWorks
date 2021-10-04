@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/allUsers/manYounger20/Ivan.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/manYounger20/Oleh.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/manYounger20/Sasha.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/womanOlder20/Olha.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/womanOlder20/Yulia.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/womanYounger20/Katya.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/womanYounger20/Masha.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allUsers/womanYounger20/Natasha.txt" afterDir="false" />
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="www">
+      <change afterPath="$PROJECT_DIR$/allUsers/manOlder20/Misha.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allUsers/manOlder20/Oleh.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allUsers/womanOlder20/Natasha.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allUsers/manOlder20/Arseniy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allUsers/manOlder20/Arseniy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allUsers/manYounger20/Oleh.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allUsers/womanYounger20/Natasha.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +66,17 @@
       <workItem from="1633008362131" duration="11000" />
       <workItem from="1633265930385" duration="844000" />
       <workItem from="1633272366466" duration="1697000" />
-      <workItem from="1633290694843" duration="1954000" />
+      <workItem from="1633290694843" duration="2569000" />
+      <workItem from="1633351774436" duration="362000" />
     </task>
+    <task id="LOCAL-00001" summary="www">
+      <created>1633292703839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633292703839</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="www" />
+    <option name="LAST_COMMIT_MESSAGE" value="www" />
   </component>
 </project>
