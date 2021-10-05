@@ -6,9 +6,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const userRouter = require('./routes/user_router');
 
-app.use("./users", userRouter);
+app.use("/users", userRouter);
 
-app. listen(5000, ()=> {
+app.listen(5000, ()=> {
     console.log(`App listen 5000`);
 });
 

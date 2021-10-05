@@ -15,7 +15,6 @@ module.exports = {
         console.log(req.body);
 
         db.push({...req.body, id: db.length + 1})
-
         res.json(db);
     },
     updateUser: (req, res) => {
