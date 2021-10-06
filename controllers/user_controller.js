@@ -1,8 +1,8 @@
-const db = require('../dataBase/users');
+const db = require('../dataBase/users.json');
 
 module.exports = {
     getUsers: (req, res) => {
-        res.json(db);
+        fs.readFile(db);
     },
 
     getUserById: (req, res) => {
