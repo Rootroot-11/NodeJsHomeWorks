@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 2 hw">
+      <change afterPath="$PROJECT_DIR$/services/service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/allUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user_router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user_router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +66,7 @@
       <workItem from="1633452093526" duration="15000" />
       <workItem from="1633452210117" duration="6272000" />
       <workItem from="1633526862441" duration="3423000" />
+      <workItem from="1633618243576" duration="9687000" />
     </task>
     <task id="LOCAL-00001" summary="node 2 hw">
       <created>1633395423136</created>

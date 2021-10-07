@@ -1,47 +1,40 @@
 const db = require('../dataBase/allUsers.json');
 const fs = require('fs');
 const path = require("path");
+const {readFiles, writeFiles} = require("../services/service");
 
 const pathUsers = path.join(__dirname, '../', 'dataBase', 'allUsers.json');
 
 module.exports = {
 
-    getUsers: (req, res) => {
-        fs.readFile(path.join(pathUsers), (err, data) => {
-            if (err) {
-                console.log(err)
-                return
-            }
-            const user = JSON.parse(data.toString());
+    getUsers: async (req, res) => {
+        const data = await readFiles(pathUsers);
 
-            if (user.id === data.id) {
-                res.json(user);
-            }
-        });
+        res.json(data);
     },
 
-    getUserById: (req, res) => {
-        fs.readFile(path.join(pathUsers), (err, data) => {
-                if (err) {
-                    console.log(err)
-                    return
-                }
-                const users = JSON.parse(data.toString());
-                const {user_id} = req.params;
-                const user = users.find(user => user.id === +user_id);
-                res.json(user);
-            }
-        )
+    getUserById: async (req, res) => {
+        const data = await readFiles(pathUsers);
+        const {user_id} = req.params;
+        const user = data.find(user => user.id === +user_id);
+
+        res.json(user);
     },
 
-    createUser: (req, res) => {
+    createUser: async (req, res) => {
         console.log(req.body);
         db.push({...req.body, id: db.length + 1})
         res.json(db);
     },
 
-    updateUser: (req, res) => {
-        res.json('UPDATE USER');
+    updateUser: async (req, res) => {
+        const data = await readFiles(pathUsers);
+        const {user_id} = req.params;
+
+        data [id - 1] = {...data[id - 1], ...req.body};
+        await writeFiles(pathUsers, JSON.stringify(data));
+
+        res.json(data);
     }
 
 }
