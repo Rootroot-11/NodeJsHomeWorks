@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Dima",
-    "age": 22
+    "name": "Vitalik",
+    "age": 20
   },
   {
     "id": 2,
-    "name": "Andrii",
-    "age": 12
+    "name": "Masha",
+    "age": 36
   },
   {
     "id": 3,
@@ -26,12 +26,7 @@
   },
   {
     "id": 6,
-    "name": "Natalia",
-    "age": 20
-  },
-  {
-    "id": 7,
-    "name": "Tamara",
-    "age": 18
+    "name": "Sasha",
+    "age": 27
   }
 ]

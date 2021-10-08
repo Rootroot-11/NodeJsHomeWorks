@@ -1,9 +1,5 @@
 const fs = require('fs');
-const path = require('path');
 const util = require('util');
-
-// const pathUsers = path.join(__dirname, '../', 'dataBase', 'allUsers.json');
-
 const readFilePromise = util.promisify(fs.readFile);
 const writeFilePromise = util.promisify(fs.writeFile);
 
@@ -13,8 +9,8 @@ async function readFiles(pathUsers) {
     return JSON.parse(data.toString());
 }
 
-async function writeFiles(pathUsers, newData) {
-    await writeFilePromise(pathUsers, newData);
+async function writeFiles(pathUsers, file) {
+    await writeFilePromise(pathUsers, JSON.stringify(file));
 }
 
 module.exports = {readFiles, writeFiles};

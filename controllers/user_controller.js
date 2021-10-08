@@ -1,8 +1,6 @@
 const db = require('../dataBase/allUsers.json');
-const fs = require('fs');
 const path = require("path");
 const {readFiles, writeFiles} = require("../services/service");
-
 const pathUsers = path.join(__dirname, '../', 'dataBase', 'allUsers.json');
 
 module.exports = {
@@ -21,22 +19,21 @@ module.exports = {
         res.json(user);
     },
 
-    createUser: async (req, res) => {
-        console.log(req.body);
-        db.push({...req.body, id: db.length + 1})
+    createUser: (req, res) => {
+        db.push({...req.body, id: db.length + 1});
+
         res.json(db);
     },
 
-    updateUser: async (req, res) => {
-        const data = await readFiles(pathUsers);
+    deleteUser: async (req, res) => {
+        const users = await readFiles(pathUsers);
         const {user_id} = req.params;
 
-        data [id - 1] = {...data[id - 1], ...req.body};
-        await writeFiles(pathUsers, JSON.stringify(data));
+        const user = users.filter(user => user.id !== +user_id);
+        await writeFiles(pathUsers, user);
 
-        res.json(data);
+        res.json(user);
     }
-
 }
 
 
