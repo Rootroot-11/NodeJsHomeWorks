@@ -1,4 +1,5 @@
 const User = require('../dataBase/User');
+const db = require('../dataBase/User')
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
@@ -19,15 +20,28 @@ module.exports = {
             const {user_id} = req.params;
             const userById = await User.findById(user_id);
 
+            req.userById = user;
+
             if (!userById) {
                 throw new Error('This person does not exist.');
             }
-
-            req.userById = user;
 
             next();
         } catch (e) {
             res.json(e.message);
         }
-    }
+    },
+    checkLogin: async (req, res, next) => {
+        try {
+            const {id} = req.params;
+            const user = await db.exists({_id: Types.ObjectId(id)});
+
+            if (!user) {
+                throw new Error('There is invalid logins');
+            }
+            next();
+        } catch (e) {
+            res.json(e.message);
+        }
 }
+};
