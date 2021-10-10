@@ -1,6 +1,4 @@
 const User = require('../dataBase/User');
-// const {readFiles, writeFiles} = require("../services/service");
-const userUtil = require('../util/user.util');
 
 module.exports = {
 
@@ -15,17 +13,15 @@ module.exports = {
     },
 
     getUserById: async (req, res) => {
-        try {
-            const {user_id} = req.params;
-            const user = await User.findById(user_id).lean();
+        try{
+            const { user_id } = req.params;
+            const user = await User.findById(user_id);
 
-            const normalizedUser = userUtil.userNormalizator(user);
-
-            console.log(normalizedUser);
-            res.json(normalizedUser);
+            res.json(user);
         } catch (e) {
-            res.json(e.message);
+            res.json(e);
         }
+
     },
 
     createUser: async (req, res) => {
@@ -34,11 +30,8 @@ module.exports = {
 
             res.json(newUser);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
-        db.push({...req.body, id: db.length + 1});
-
-        res.json(db);
     },
 
     deleteUser: async (req, res) => {
