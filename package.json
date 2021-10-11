@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "bcrypt": "^5.0.1",
     "mongoose": "^6.0.10"
   },
   "devDependencies": {
+    "bcrypt": "^5.0.1",
     "eslint": "^8.0.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
