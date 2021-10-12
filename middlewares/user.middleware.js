@@ -14,16 +14,16 @@ module.exports = {
             res.json(e.message);
         }
     },
-    userById: async (req, res, next) => {
+    checkUserById: async (req, res, next) => {
         try {
-            const {user_id} = req.params;
-            const userById = await User.findById(user_id);
+            const { user_id } = req.params;
+            const user = await User.findById(user_id);
 
-            req.userById = user;
-
-            if (!userById) {
+            if (!user) {
                 throw new Error('This person does not exist.');
             }
+
+            req.user = user;
 
             next();
         } catch (e) {
@@ -42,20 +42,6 @@ module.exports = {
         } catch (e) {
             res.json(e.message);
         }
-    },
-    isUserBodyValid: (req, res, next) => {
-        try {
-            const { error, value } = userValidator.createUserValidator.validate(req.body);
-
-            if (error) {
-                throw new Error(error.details[0].message);
-            }
-
-            req.body = value;
-
-            next();
-        } catch (e) {
-            res.json(e.message);
-        }
     }
+
 };
