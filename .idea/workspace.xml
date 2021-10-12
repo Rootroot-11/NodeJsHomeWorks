@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 3 homework">
-      <change afterPath="$PROJECT_DIR$/configs/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/user.validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
-    </list>
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 3 fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633871313982</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="node 3 fix">
+      <created>1634039767623</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1634039767623</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,8 +147,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="node 3 lec" />
+    <MESSAGE value="node 4 homework" />
     <MESSAGE value="node 3 homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 3 homework" />
+    <MESSAGE value="node 3 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 3 fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
