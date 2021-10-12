@@ -9,7 +9,7 @@ module.exports = {
 
             res.json(users);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
     },
 
@@ -18,12 +18,21 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            let user = await User.findById(user_id);
+            let user = await User
+                .findById(user_id)
+                .select('+password')
+                .select('-email')
+                .lean();
 
-            user = userUtil.userNormalizator(user);
+            console.log('________');
+            console.log(user);
+            console.log('________')
+
+            // user = userUtil.userNormalizator(user);
+            const normalizedUser = user;
             res.json(user);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
     },
 

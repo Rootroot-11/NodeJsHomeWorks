@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const userRouter = require('./routes/user.router');
-const loginRouter = require('./routes/login.router');
+const loginRouter = require('./routes/auth.router');
 
 app.use('/users', userRouter);
 app.use('/users', loginRouter);

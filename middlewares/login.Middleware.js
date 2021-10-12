@@ -7,7 +7,7 @@ module.exports = {
             const {error, value} = authValid.validate(req.body);
 
             if (error) {
-                throw new Error(error.details[0].message);
+                throw new Error('Wrong email or password!');
             }
 
             req.body = value;
