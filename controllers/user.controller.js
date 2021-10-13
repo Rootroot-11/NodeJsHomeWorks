@@ -8,20 +8,16 @@ module.exports = {
 
             res.json(users);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
 
     },
 
-    getUserById: async (req, res) => {
-        try{
-            const { user_id } = req.params;
-
-            const user = await User.findById(user_id);
-
-            res.json(user);
+    getUserById: (req, res) => {
+        try {
+            res.json(req.user);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
     },
 
@@ -31,7 +27,7 @@ module.exports = {
 
             res.json(newUser);
         } catch (e) {
-            res.json(e);
+            res.json(e.message);
         }
     },
 

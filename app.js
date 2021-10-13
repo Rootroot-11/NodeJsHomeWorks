@@ -12,7 +12,7 @@ const userRouter = require('./routes/user.router');
 const loginRouter = require('./routes/login.router');
 
 app.use('/users', userRouter);
-app.use('/users', loginRouter);
+app.use('/auth', loginRouter);
 
 app.listen(PORT, () => {
     console.log(`App listen ${PORT}`);
