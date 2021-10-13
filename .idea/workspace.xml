@@ -4,17 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 3 lec">
-      <change afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 5 hw">
+      <change afterPath="$PROJECT_DIR$/errors/ErrorHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/constans.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/login.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/login.Middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/login.Middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/login.Middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/auth.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/auth.validators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +64,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,6 +79,8 @@
       <workItem from="1633774521460" duration="311000" />
       <workItem from="1633931961021" duration="6779000" />
       <workItem from="1634035988116" duration="633000" />
+      <workItem from="1634128165720" duration="11254000" />
+      <workItem from="1634140248571" duration="2061000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>

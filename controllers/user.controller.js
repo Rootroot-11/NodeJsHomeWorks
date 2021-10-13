@@ -3,17 +3,17 @@ const passwordService = require('../service/password.service');
 const userUtil = require('../util/user.util');
 
 module.exports = {
-    getUsers: async (req, res) => {
+    getUsers: async (req, res, next) => {
         try {
             const users = await User.find();
 
             res.json(users);
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
 
-    getUserById: async (req, res) => {
+    getUserById: async (req, res, next) => {
 
         try {
             const {user_id} = req.params;
@@ -21,7 +21,7 @@ module.exports = {
             let user = await User
                 .findById(user_id)
                 .select('+password')
-                .select('-email')
+                .select('+email')
                 .lean();
 
             console.log('________');
@@ -32,21 +32,22 @@ module.exports = {
             const normalizedUser = user;
             res.json(user);
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
 
-    createUser: async (req, res) => {
+    createUser: async (req, res, next) => {
         try {
-            const hashedPassword = await passwordService(req.body.password);
+            const hashedPassword = await passwordService.hash(req.body.password);
 
             const newUser = await User.create({...req.body, password: hashedPassword});
+
             res.json(newUser);
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
-    deleteUser: async (req, res) => {
+    deleteUser: async (req, res, next) => {
         try {
             const {user_id} = req.params;
 
@@ -54,7 +55,7 @@ module.exports = {
 
             res.json(deleteUser);
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     }
 };

@@ -1,19 +1,24 @@
 const User = require('../dataBase/User');
 const userValidator = require('../validators/user.validators');
+const {ErrorHandler} = require("../errors/ErrorHandler");
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
         try {
-            const userByEmail = await User.findOne({email: req.body.email});
+            const {email} = req.body;
+
+            const userByEmail = await User.findOne({email});
 
             if (userByEmail) {
-                throw new Error('Email already exist');
+                return next({
+                    message: "Email already exist",
+                    status: 404
+                });
             }
 
-            req.user = 'Y';
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e)
         }
     },
 
@@ -22,32 +27,32 @@ module.exports = {
             const {error, value} = userValidator.createUserValidator.validate(req.body);
 
             if (error) {
-                throw new Error(error.details[0].message);
+                throw new ErrorHandler();
             }
 
             req.body = value;
-
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e)
         }
     },
 
-    doesUserExist: (req, res, next) => {
+    isUserPresent: async (req, res, next) => {
         try {
-            const {user_id} = req.params;
-            const user = User.findById(user_id, {__v: 0});
+            const userByEmail = await User
+                .findOne({email: req.body.email})
+                .select('+password')
+                .lean();
 
-            if (!user) {
-                throw new Error("User with this ID does not exist");
+            if (!userByEmail) {
+                throw new ErrorHandler('Wrong email or password', 418)
             }
 
-            req.user = user;
+            req.user = userByEmail;
 
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     }
-
 };
