@@ -34,8 +34,8 @@ module.exports = {
 
     checkLogin: async (req, res, next) => {
         try {
-            const {id} = req.params;
-            const user = await User.exists({_id: Types.ObjectId(id)});
+            const { id } = req.params;
+            const user = await User.exists({ _id: Types.ObjectId(id) });
 
             if (!user) {
                 throw new Error('There is invalid logins');
