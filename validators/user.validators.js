@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const userRoles = require('../configs/user-roles.enum');
-const { EMAIL_REGEXP, PASSWORD_REGEXP } = require('../configs/constans');
+const { PASSWORD_REGEXP } = require('../configs/constans');
 
 const createUserValidator = Joi.object({
     name: Joi.string()
@@ -12,7 +12,7 @@ const createUserValidator = Joi.object({
         .required(),
     email: Joi
         .string()
-        .regex(EMAIL_REGEXP)
+        //.regex
         .trim()
         .required(),
     role: Joi.string().allow(...Object.values(userRoles)),

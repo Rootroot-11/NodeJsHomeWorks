@@ -10,23 +10,19 @@ module.exports = {
                 throw new Error('Email already exist');
             }
 
-            req.user = 'Y';
             next();
         } catch (e) {
             res.json(e.message);
         }
     },
 
-    isUserBodyValid: (req, res, next) => {
+    isUserBodyValid:  (req, res, next) => {
         try {
-            const {error, value} = userValidator.createUserValidator.validate(req.body);
+            const {error, value } = userValidator.createUserValidator.validate(req.body);
 
-            if (error) {
-                throw new Error(error.details[0].message);
-            }
-
-            req.body = value;
-
+           if (error) {
+               throw new Error(error.details[0].message);
+           }
             next();
         } catch (e) {
             res.json(e.message);

@@ -9,7 +9,7 @@ router.post('/',
     userMiddleware.createUserMiddleware,
     userController.createUser);
 
-router.get('/:user_id', userMiddleware.createUserMiddleware, userController.getUserById);
+router.get('/:user_id', userController.getUserById);
 router.delete('/:user_id', userController.deleteUser);
 
 module.exports = router;

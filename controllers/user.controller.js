@@ -9,34 +9,35 @@ module.exports = {
 
             res.json(users);
         } catch (e) {
-            res.json(e);
-        }
-    },
-
-    getUserById: async (req, res) => {
-
-        try {
-            const {user_id} = req.params;
-
-            let user = await User.findById(user_id);
-
-            user = userUtil.userNormalizator(user);
-            res.json(user);
-        } catch (e) {
-            res.json(e);
-        }
-    },
-
-    createUser: async (req, res) => {
-        try {
-            const hashedPassword = await passwordService(req.body.password);
-
-            const newUser = await User.create({...req.body, password: hashedPassword});
-            res.json(newUser);
-        } catch (e) {
             res.json(e.message);
         }
     },
+
+    getUserById: async (req, res, next) => {
+        try {
+            const {user_id} = req.params;
+            const user = await User
+                .findById(user_id)
+                .lean
+            const UserNormalized = userUtil.userNormalizator(user);
+            res.json(UserNormalized);
+        } catch (e) {
+            next(e.message);
+        }
+    },
+
+    createUser: async (req, res, next) => {
+        try {
+            const hashedPassword = await passwordService.hash(req.body.password);
+            const newUser = User.create({...req.body, password: hashedPassword});
+
+            req.body.pasword = hashedPassword;
+            res.json(newUser);
+        } catch (e) {
+            next(e.message);
+        }
+    },
+
     deleteUser: async (req, res) => {
         try {
             const {user_id} = req.params;
@@ -48,5 +49,6 @@ module.exports = {
             res.json(e.message);
         }
     }
+
 };
 
