@@ -12,7 +12,7 @@ module.exports = {
             if (userByEmail) {
                 return next({
                     message: "Email already exist",
-                    status: 404
+                    status: 401
                 });
             }
 
@@ -27,7 +27,10 @@ module.exports = {
             const {error, value} = userValidator.createUserValidator.validate(req.body);
 
             if (error) {
-                throw new ErrorHandler();
+                return next({
+                    message: 'Wrong email or password',
+                    status: 404
+                });
             }
 
             req.body = value;
@@ -39,13 +42,17 @@ module.exports = {
 
     isUserPresent: async (req, res, next) => {
         try {
+            const { email } = req.body;
+
             const userByEmail = await User
-                .findOne({email: req.body.email})
-                .select('+password')
+                .findOne({email})
                 .lean();
 
             if (!userByEmail) {
-                throw new ErrorHandler('Wrong email or password', 418)
+                return next({
+                    message: 'Wrong email or password',
+                    status: 404
+                })
             }
 
             req.user = userByEmail;
@@ -55,4 +62,5 @@ module.exports = {
             next(e);
         }
     }
+
 };

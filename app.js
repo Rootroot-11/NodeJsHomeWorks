@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const {MONGO_CONNECT_URL, PORT} = require('./configs/config');
+const { MONGO_CONNECT_URL, PORT } = require('./configs/config');
 
 const app = express();
 
@@ -15,7 +15,7 @@ const {userRouter, authRouter} = require('./routes');
 
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
-app.use('*', (err, req, res, next) => {
+app.use('*', (err, req, res) => {
     res
         .status(err.status || 500)
         .json({

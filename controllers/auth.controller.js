@@ -12,7 +12,6 @@ module.exports = {
         } catch (e) {
             next(e);
         }
-
     },
 
     logoutUser: async (req, res, next) => {
@@ -24,4 +23,5 @@ module.exports = {
             next(e);
         }
     }
+
 };
