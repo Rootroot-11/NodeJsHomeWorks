@@ -24,11 +24,13 @@ module.exports = {
         }
     },
 
-    createUser: async (req, res, next) => {
+    createUser: async (req, res) => {
         try {
-            const hashedPassword = await passwordService.hash(req.body.password);
+            const { password } = req.body;
 
-            const newUser = await User.create({...req.body, password: hashedPassword});
+            const hashedPassword = await passwordService.hash({ password });
+
+            const newUser = await User.create({ ...req.body, password: hashedPassword });
 
             res.json(newUser);
         } catch (e) {
@@ -38,7 +40,7 @@ module.exports = {
 
     updateUser: (req, res) => {
         try {
-            const {user_id} = req.params;
+            const { user_id } = req.params;
             let user = User.findByIdAndUpdate(user_id, req.user).lean();
             user = userUtil.userNormalizator(user);
 
