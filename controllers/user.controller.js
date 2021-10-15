@@ -30,10 +30,9 @@ module.exports = {
 
             const newUser = await User.create({...req.body, password: hashedPassword});
 
-
             res.json(newUser);
         } catch (e) {
-            next(e);
+            res.json(e.message);
         }
     },
 
