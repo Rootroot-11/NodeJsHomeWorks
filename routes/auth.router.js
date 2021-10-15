@@ -1,10 +1,10 @@
-const authRouter = require('express').Router();
+const loginRouter = require('express').Router();
 
 const loginUserController = require('../controllers/login.controller');
-const loginMiddleware = require('../middlewares/login.Middleware');
-const authMiddleware = require('../middlewares/login.Middleware');
+const loginAuthMiddleware = require('../middlewares/auth.middleware');
 
-authRouter.post('/', loginMiddleware.loginUserMiddleware, authMiddleware.isAuthenticationValid,
+loginRouter.post('/', loginAuthMiddleware.isUserBodyValid, loginAuthMiddleware.loginUserMiddleware,
     loginUserController.loginUser);
+// loginRouter.post('/logout', loginUserController.logoutUser);
 
-module.exports = authRouter;
+module.exports = loginRouter;
