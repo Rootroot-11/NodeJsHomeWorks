@@ -1,15 +1,21 @@
 const User = require('../dataBase/User');
 const userValidator = require('../validators/user.validators');
+const passwordService = require('../service/password.service');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
         try {
-            const {email} = req.body;
+            const {email, password} = req.body;
             const userByEmail = await User.findOne({email});
 
             if (userByEmail) {
                 throw new Error('Email already exist');
             }
+
+            const hashPassword = await passwordService.hash(password);
+            const createUser = await User.create({...req.body, password: hashPassword});
+
+            res.json(createUser);
 
             next();
         } catch (e) {
