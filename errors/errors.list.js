@@ -4,7 +4,7 @@ module.exports = {
         status: 404
     },
 
-    NO_VALID_BODY: {
+    NOT_VALID_BODY: {
         message: 'Wrong email or password',
         status: 400
     },
@@ -17,6 +17,11 @@ module.exports = {
     WRONG_EMAIL_OR_PASSWORD: {
         message: 'Wrong email or password',
         status: 401
+    },
+
+    ACCESS: {
+        message: 'Access denied',
+        status: 404
     }
 
 };

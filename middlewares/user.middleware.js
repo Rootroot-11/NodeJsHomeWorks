@@ -1,6 +1,6 @@
 const User = require('../dataBase/User');
 const userValidator = require('../validators/user.validators');
-const {ErrorHandler} = require("../errors/ErrorHandler");
+const { ErrorHandler, USER_NOT_FOUND } = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
@@ -10,11 +10,8 @@ module.exports = {
             const userByEmail = await User.findOne({email});
 
             if (userByEmail) {
-                return next({
-                    message: "Email already exist",
-                    status: 401
-                });
-            }
+                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
+                }
 
             next();
         } catch (e) {
@@ -27,10 +24,7 @@ module.exports = {
             const {error, value} = userValidator.createUserValidator.validate(req.body);
 
             if (error) {
-                return next({
-                    message: 'Wrong email or password',
-                    status: 404
-                });
+                return next(error.details[0].message);
             }
 
             req.body = value;
@@ -42,17 +36,14 @@ module.exports = {
 
     isUserPresent: async (req, res, next) => {
         try {
-            const { email } = req.body;
+            const {email} = req.body;
 
             const userByEmail = await User
                 .findOne({email})
                 .lean();
 
             if (!userByEmail) {
-                return next({
-                    message: 'Wrong email or password',
-                    status: 404
-                })
+                throw new ErrorHandler(USER_NOT_FOUND.message,USER_NOT_FOUND.status)
             }
 
             req.user = userByEmail;

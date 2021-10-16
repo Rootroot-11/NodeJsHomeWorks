@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 5 hw">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 5 homework">
+      <change afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/ErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/ErrorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/errors.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -27,6 +39,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.eslintrc.js" root0="FORCE_HIGHLIGHTING" />
@@ -48,7 +68,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTTP Request" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -113,7 +133,77 @@
       <option name="project" value="LOCAL" />
       <updated>1634237361697</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="node 5 hw">
+      <created>1634237436200</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1634237436200</updated>
+    </task>
+    <task id="LOCAL-00009" summary="node 4">
+      <created>1634307082138</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634307082139</updated>
+    </task>
+    <task id="LOCAL-00010" summary="node 4 fix">
+      <created>1634309723073</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634309723073</updated>
+    </task>
+    <task id="LOCAL-00011" summary="node 4 fix">
+      <created>1634309750423</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634309750423</updated>
+    </task>
+    <task id="LOCAL-00012" summary="node 4 fix">
+      <created>1634310878723</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634310878723</updated>
+    </task>
+    <task id="LOCAL-00013" summary="node 4 fix">
+      <created>1634311339467</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634311339467</updated>
+    </task>
+    <task id="LOCAL-00014" summary="node 4 fix">
+      <created>1634311539087</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634311539087</updated>
+    </task>
+    <task id="LOCAL-00015" summary="node 4 fix">
+      <created>1634311776437</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634311776437</updated>
+    </task>
+    <task id="LOCAL-00016" summary="node 5 homework">
+      <created>1634316915174</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634316915174</updated>
+    </task>
+    <task id="LOCAL-00017" summary="node 5 homework">
+      <created>1634326601306</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634326601307</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +227,9 @@
     <MESSAGE value="node 4 homework" />
     <MESSAGE value="node 4 hw" />
     <MESSAGE value="node 5 hw" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 5 hw" />
+    <MESSAGE value="node 4" />
+    <MESSAGE value="node 4 fix" />
+    <MESSAGE value="node 5 homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 5 homework" />
   </component>
 </project>
