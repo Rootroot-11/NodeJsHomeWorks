@@ -17,9 +17,8 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            let user = await User
+            const user = await User
                 .findById(user_id)
-                .select()
                 .select()
                 .lean();
 
@@ -47,7 +46,7 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            const deleteUser = await User.findByIdAndDelete(user_id);
+            const deleteUser = await User.findByIdAndDelete(user_id).select('-password');
 
             res.json(deleteUser);
         } catch (e) {

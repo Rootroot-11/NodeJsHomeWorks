@@ -15,7 +15,7 @@ module.exports = {
 
             next();
         } catch (e) {
-            next(e)
+            next(e);
         }
     },
 
@@ -30,7 +30,7 @@ module.exports = {
             req.body = value;
             next();
         } catch (e) {
-            next(e)
+            next(e);
         }
     },
 
@@ -43,7 +43,7 @@ module.exports = {
                 .lean();
 
             if (!userByEmail) {
-                throw new ErrorHandler(USER_NOT_FOUND.message,USER_NOT_FOUND.status)
+                throw new ErrorHandler(USER_NOT_FOUND.message,USER_NOT_FOUND.status);
             }
 
             req.user = userByEmail;
