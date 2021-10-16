@@ -14,7 +14,7 @@ module.exports = {
         }
     },
 
-    getUserById: async (req, res) => {
+    getUserById: (req, res) => {
         try {
             const userNormalized = userUtil.userNormalizator(req.user);
 
@@ -54,7 +54,7 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            const deleteUser = await User.findByIdAndDelete(user_id);
+            const deleteUser = await User.findByIdAndDelete(user_id).select('-password');
 
             res.json(deleteUser);
         } catch (e) {

@@ -2,7 +2,6 @@ const User = require('../dataBase/User');
 const authValidator = require('../validators/auth.validators');
 const {compare} = require("../service/password.service");
 
-
 module.exports = {
     isUserBodyValid: (req, res, next) => {
         try {

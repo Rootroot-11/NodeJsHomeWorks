@@ -6,5 +6,25 @@
     "express": "^4.17.1",
     "joi": "^17.4.2",
     "mongoose": "^6.0.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "4.3.0",
+    "lint-staged": "^11.2.0"
+  },
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
   }
 }
