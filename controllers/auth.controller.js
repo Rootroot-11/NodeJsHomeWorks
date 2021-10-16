@@ -1,12 +1,18 @@
 const userUtil = require('../util/user.util')
+const {passwordService} = require("../service");
 
 module.exports = {
-    loginUser: async (req, res) => {
-        const user = req.user;
+    loginUser: async (req, res, next) => {
+        try {
+            const {password} = req.body;
+            const hashPassword = req.user;
 
-        const NormalizedUser = userUtil.userNormalizator(user.toObject());
+            await passwordService.compare(password, hashPassword.password);
 
-        res.json(NormalizedUser);
+            res.json(req.user);
+        } catch (e) {
+            next(e);
+        }
     }
 };
 

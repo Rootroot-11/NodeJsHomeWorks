@@ -22,17 +22,17 @@ module.exports = {
 
     loginUser: async (req, res, next) => {
         try {
-            const {email, password} = req.body;
+            const {email} = req.body;
 
             const userFound = await User.findOne({email});
 
             if (!userFound) {
                 throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status)
             }
-            await compare(password, userFound.password);
 
             res.user = userFound;
 
+            next();
         } catch (e) {
             next(e)
         }
