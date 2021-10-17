@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-const { EMAIL_REGEXP, PASSWORD_REGEXP } = require('../configs/constans');
+const {EMAIL_REGEXP, PASSWORD_REGEXP} = require('../configs/constans');
 
 const authValidator = joi.object({
     email: joi
@@ -14,4 +14,4 @@ const authValidator = joi.object({
         .required(),
 });
 
-module.exports = { authValidator };
+module.exports = {authValidator};
