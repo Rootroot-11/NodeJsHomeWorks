@@ -1,5 +1,4 @@
-const userUtil = require('../util/user.util')
-const {passwordService} = require("../service");
+const { passwordService } = require("../service");
 
 module.exports = {
     loginUser: async (req, res, next) => {
