@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 4 fix">
+    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 4 homework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/login.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/updateValid.middleware.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/user.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/auth.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/auth.validators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +73,7 @@
       <workItem from="1633774521460" duration="311000" />
       <workItem from="1633931961021" duration="6779000" />
       <workItem from="1634035988116" duration="633000" />
+      <workItem from="1634509250378" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -174,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634311339467</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="node 4 homework">
+      <created>1634499379662</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634499379662</updated>
+    </task>
+    <task id="LOCAL-00015" summary="node 4 homework">
+      <created>1634499479595</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634499479595</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,11 +201,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="node 3 lec" />
     <MESSAGE value="node 3 homework" />
-    <MESSAGE value="node 4 homework" />
     <MESSAGE value="node 4 hw" />
     <MESSAGE value="node 5 hw" />
     <MESSAGE value="node 4" />
     <MESSAGE value="node 4 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 4 fix" />
+    <MESSAGE value="node 4 homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 4 homework" />
   </component>
 </project>

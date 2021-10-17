@@ -19,7 +19,6 @@ router.get('/:user_id',
 router.put('/:user_id',
     userMiddleware.isUpdateBodyValid,
     userIdMiddleware.checkIdMiddleware,
-    userMiddleware.updateMiddleware,
     userController.updateUser);
 
 router.delete('/:user_id',
