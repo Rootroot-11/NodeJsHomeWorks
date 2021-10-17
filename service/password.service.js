@@ -8,6 +8,7 @@ module.exports = {
         if (!isPasswordMatched) {
             throw new Error('Wrong email or password');
         }
+        return isPasswordMatched;
     }
 };
 
