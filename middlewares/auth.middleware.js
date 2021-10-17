@@ -8,7 +8,7 @@ module.exports = {
             const {error, value} = authValidator.authValid.validate(req.body);
 
             if (error) {
-                throw new Error('Wrong hgfhgf');
+                throw new Error('Wrong email or password');
             }
 
             req.body = value;
@@ -22,7 +22,7 @@ module.exports = {
     loginUserMiddleware: async (req, res, next) => {
         try {
             const {email, password} = req.body;
-            const userFound = await User.findOne({email});
+            const userFound = await User.findOne(email);
             if (!userFound) {
                 throw new Error('Wrong email or password');
             }
