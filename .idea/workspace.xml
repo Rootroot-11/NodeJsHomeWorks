@@ -5,32 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 5 homework">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/constans.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/user-roles.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/errors/ErrorHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/auth.validators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validators/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/constans.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/errors.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/user.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +31,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Node_3js" />
+        <entry key="$PROJECT_DIR$" value="Node_5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.eslintrc.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yrSkpb342VnCo4bZ3eorONIXXx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

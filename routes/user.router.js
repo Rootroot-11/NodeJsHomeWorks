@@ -16,6 +16,11 @@ router.get('/:user_id',
     userMiddleware.createUserMiddleware,
     userController.getUserById);
 
+router.put('/:user_id',
+    userMiddleware.isUpdateBodyValid,
+    userIdMiddleware.checkIdMiddleware,
+    userController.updateUser);
+
 router.delete('/:user_id',
     userIdMiddleware.checkIdMiddleware,
     userController.deleteUser);

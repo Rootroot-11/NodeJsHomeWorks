@@ -42,6 +42,18 @@ module.exports = {
         }
     },
 
+    updateUser: async (req, res) => {
+        try {
+            const {user_id} = req.params;
+            let user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
+            user = userUtil.userNormalizator(user);
+
+            res.json(user);
+        } catch (e) {
+            res.json(e.message);
+        }
+    },
+
     deleteUser: async (req, res, next) => {
         try {
             const {user_id} = req.params;
