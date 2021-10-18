@@ -1,6 +1,6 @@
-const { authValidator } = require('../validators');
-const { ErrorHandler, NOT_VALID_BODY, WRONG_EMAIL_OR_PASSWORD } = require('../errors');
-const { passwordService } = require('../service');
+const {authValidator} = require('../validators');
+const {ErrorHandler, NOT_VALID_BODY, WRONG_EMAIL_OR_PASSWORD} = require('../errors');
+const {passwordService} = require('../service');
 const User = require("../dataBase/User");
 
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
 
             const hashPassword = req.hashPassword;
 
-            const { password } = req.body;
+            const {password} = req.body;
             await passwordService.compare(password, hashPassword);
 
             next();
