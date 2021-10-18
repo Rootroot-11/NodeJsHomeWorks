@@ -10,3 +10,4 @@ module.exports = {
     USER_NOT_FOUND, WRONG_EMAIL_OR_PASSWORD,
     ACCESS
 };
+

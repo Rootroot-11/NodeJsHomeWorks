@@ -1,21 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const app = express();
 
 require('dotenv').config();
-const { MONGO_CONNECT_URL, PORT } = require('./configs/config');
-mongoose.connect(MONGO_CONNECT_URL);
-
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 
 const {userRouter, authRouter} = require('./routes');
+const {MONGO_CONNECT_URL, PORT, DEFAULT_STATUS_ERR} = require('./configs');
+
+const app = express();
+
+mongoose.connect(MONGO_CONNECT_URL);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('*', (err, req, res) => {
     res
-        .status(err.status || 500)
+        .status(err.status || DEFAULT_STATUS_ERR)
         .json({
             message: err.message
         });

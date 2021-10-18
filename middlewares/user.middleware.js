@@ -1,6 +1,6 @@
 const User = require('../dataBase/User');
 const userValidator = require('../validators/user.validators');
-const { ErrorHandler, USER_NOT_FOUND } = require('../errors');
+const {ErrorHandler, USER_NOT_FOUND} = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = {
 
             if (userByEmail) {
                 throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
-                }
+            }
 
             next();
         } catch (e) {
@@ -43,7 +43,7 @@ module.exports = {
                 .lean();
 
             if (!userByEmail) {
-                throw new ErrorHandler(USER_NOT_FOUND.message,USER_NOT_FOUND.status);
+                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
             }
 
             req.user = userByEmail;

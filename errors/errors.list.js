@@ -1,7 +1,7 @@
 module.exports = {
     EMAIL_EXIST: {
         message: 'Email already exist',
-        status: 404
+        status: 409
     },
 
     NOT_VALID_BODY: {
@@ -16,7 +16,7 @@ module.exports = {
 
     WRONG_EMAIL_OR_PASSWORD: {
         message: 'Wrong email or password',
-        status: 401
+        status: 400
     },
 
     ACCESS: {
