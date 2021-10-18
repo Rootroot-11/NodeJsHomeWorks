@@ -1,4 +1,4 @@
-const authValidator = require("../validators/auth.validators");
+const {authValidator} = require('../validators');
 const { ErrorHandler, NOT_VALID_BODY, WRONG_EMAIL_OR_PASSWORD } = require('../errors');
 const User = require("../dataBase/User");
 
