@@ -1,6 +1,7 @@
-const User = require('../dataBase/User');
-const passwordService = require('../service/password.service');
-const userUtil = require('../util/user.util');
+const { User }= require('../dataBase');
+const { passwordService } = require('../service');
+const { userUtil } = require('../util');
+const { CREATED, USER_UPDATE } = require('../errors');
 
 module.exports = {
     getUsers: async (req, res, next) => {
@@ -14,7 +15,6 @@ module.exports = {
     },
 
     getUserById: async (req, res, next) => {
-
         try {
             const {user_id} = req.params;
 
@@ -31,14 +31,26 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
-            const { password } = req.body;
+            const {password} = req.body;
 
             const hashedPassword = await passwordService.hash(password);
             const newUser = User.create({...req.body, password: hashedPassword});
 
-            const normalizedUser = userUtil.userNormalizator(newUser);
+            userUtil.userNormalizator(newUser);
 
-            res.json(normalizedUser);
+            res.json(CREATED.message, CREATED.status);
+        } catch (e) {
+            next(e);
+        }
+    },
+
+    updateUser: async (req, res) => {
+        try {
+            const {user_id} = req.params;
+            const user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
+            userUtil.userNormalizator(user);
+
+            res.json(USER_UPDATE.message, USER_UPDATE.status);
         } catch (e) {
             next(e);
         }
@@ -48,9 +60,9 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            const deleteUser = await User.findByIdAndDelete(user_id).select('-password');
+            await User.findByIdAndDelete(user_id).select('-password');
 
-            res.json(deleteUser);
+            res.sendStatus(204);
         } catch (e) {
             next(e);
         }

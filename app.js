@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
-const {userRouter, authRouter} = require('./routes');
-const {MONGO_CONNECT_URL, PORT, DEFAULT_STATUS_ERR} = require('./configs');
+const { userRouter, authRouter } = require('./routes');
+const { MONGO_CONNECT_URL, PORT, DEFAULT_STATUS_ERR } = require('./configs');
 
 const app = express();
 

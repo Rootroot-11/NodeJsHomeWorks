@@ -1,6 +1,6 @@
 const User = require('../dataBase/User');
 const userValidator = require('../validators/user.validators');
-const {ErrorHandler, USER_NOT_FOUND} = require('../errors');
+const { ErrorHandler, USER_NOT_FOUND } = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
@@ -51,6 +51,22 @@ module.exports = {
             next();
         } catch (e) {
             next(e);
+        }
+    },
+
+    isUpdateBodyValid: (req, res, next) => {
+        try {
+            const {error, value} = userValidator.updateUserValidator.validate(req.body);
+
+            if (error) {
+                throw new Error(error.details[0].message);
+            }
+
+            req.user = value;
+
+            next();
+        } catch (e) {
+            res.json(e.message);
         }
     }
 
