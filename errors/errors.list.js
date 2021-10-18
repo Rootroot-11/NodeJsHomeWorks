@@ -22,6 +22,11 @@ module.exports = {
     ACCESS: {
         message: 'Access denied',
         status: 404
+    },
+
+    SUCCESFUL_LOGIN: {
+        message: 'We are log in',
+        status: 201
     }
 
 };

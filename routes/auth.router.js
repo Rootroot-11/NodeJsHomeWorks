@@ -5,7 +5,7 @@ const { authMiddleware } = require('../middlewares');
 
 router.post('/',
     authMiddleware.isUserBodyValid,
-    authMiddleware.loginUser,
+    authMiddleware.loginUserMiddleware,
     authController.loginUser
 );
 

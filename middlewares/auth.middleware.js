@@ -1,39 +1,41 @@
-const {authValidator} = require('../validators');
-const { ErrorHandler, NOT_VALID_BODY, WRONG_EMAIL_OR_PASSWORD } = require('../errors');
-const User = require("../dataBase/User");
+const User = require('../dataBase/User');
+const authValidator = require('../validators/auth.validators');
+const passwordService = require('../service/password.service');
 
 module.exports = {
-    isUserBodyValid: (req, res, next) => {
+    isUserBodyValid: async (req, res, next) => {
         try {
-            const {error, value} = authValidator.authValid.validate(req.body);
+            const {email, password} = req.body;
+            const {error} = await authValidator.authValidator.validate({email, password});
 
             if (error) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.status);
+                throw new Error('Wrong email or password');
             }
-
-            req.body = value;
-
-            next();
-        } catch (e) {
-            next(e);
-        }
-    },
-
-    loginUser: async (req, res, next) => {
-        try {
-            const {email} = req.body;
-
             const userFound = await User.findOne({email});
 
             if (!userFound) {
-                throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status);
+                throw new Error('Wrong email or password');
             }
 
-            res.user = userFound;
+            req.hashPassword = userFound.password;
 
             next();
         } catch (e) {
-            next(e);
+            res.json(e.message);
+        }
+    },
+
+    loginUserMiddleware: async (req, res, next) => {
+        try {
+
+            const hashPassword = req.hashPassword;
+
+            const {password} = req.body;
+            await passwordService.compare(password, hashPassword);
+
+            next();
+        } catch (e) {
+            res.json(e.message);
         }
     }
 
