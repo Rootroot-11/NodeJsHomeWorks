@@ -1,6 +1,7 @@
 const User = require('../dataBase/User');
 const authValidator = require('../validators/auth.validators');
-const passwordService = require('../service/password.service');
+const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD, ACCESS} = require('../errors');
+const {passwordService} = require('../service');
 
 module.exports = {
     isUserBodyValid: async (req, res, next) => {
@@ -9,34 +10,45 @@ module.exports = {
             const {error} = await authValidator.authValidator.validate({email, password});
 
             if (error) {
-                throw new Error('Wrong email or password');
+                throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status);
             }
-            const userFound = await User.findOne({email});
-
-            if (!userFound) {
-                throw new Error('Wrong email or password');
-            }
-
-            req.hashPassword = userFound.password;
 
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
 
-    loginUserMiddleware: async (req, res, next) => {
+    isUserPresent: async (req, res, next) => {
         try {
+            const {email, password} = req.body;
 
-            const hashPassword = req.hashPassword;
+            const user = await User.findOne({email}).select('+password');
 
-            const {password} = req.body;
-            await passwordService.compare(password, hashPassword);
+            if (!user) {
+                throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.status, WRONG_EMAIL_OR_PASSWORD.message);
+            }
+
+            await passwordService.compare(password, user.password);
+
+            req.body = user;
 
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
+        }
+    },
+
+    checkingRole: (roleArr = []) => (req, res, next) => {
+        try {
+            if (!roleArr.includes(req.body.role)) {
+                throw new ErrorHandler(ACCESS.message, ACCESS.status);
+            }
+            next();
+        } catch (e) {
+            next(e);
         }
     }
 
 };
+

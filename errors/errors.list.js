@@ -24,7 +24,7 @@ module.exports = {
         status: 404
     },
 
-    SUCCESFUL_LOGIN: {
+    SUCCESFUL: {
         message: 'We are log in',
         status: 201
     }
