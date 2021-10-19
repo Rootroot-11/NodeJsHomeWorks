@@ -1,10 +1,15 @@
-module.exports = {
-    loginUser: (req, res, next) => {
-        try {
-            res.json('You are log in!');
-        } catch (e) {
-            next(e);
-        }
-    },
+const {userUtil} = require('../util');
 
+module.exports = {
+    loginUser: (req, res) => {
+        try {
+            const {user} = req;
+            const userNormalized = userUtil.userNormalizator(user);
+
+            res.json(userNormalized);
+        } catch (e) {
+            res.json(e);
+        }
+    }
 };
+

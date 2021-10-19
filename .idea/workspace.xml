@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="node 5 homework">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/user.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

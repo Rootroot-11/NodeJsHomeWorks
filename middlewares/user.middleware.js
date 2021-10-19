@@ -40,6 +40,7 @@ module.exports = {
 
             const userByEmail = await User
                 .findOne({email})
+                .select('+password')
                 .lean();
 
             if (!userByEmail) {
