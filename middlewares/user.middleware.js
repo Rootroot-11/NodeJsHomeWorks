@@ -40,6 +40,7 @@ module.exports = {
 
             const userByEmail = await User
                 .findOne({email})
+                .select('+password')
                 .lean();
 
             if (!userByEmail) {
@@ -68,6 +69,24 @@ module.exports = {
         } catch (e) {
             res.json(e.message);
         }
-    }
+    },
+
+    checkUserRole: (roleArr = []) => (req, res, next) => {
+        try {
+            const { role } = req.user;
+
+            console.log('_____________________________________');
+            console.log(role);
+            console.log('_____________________________________');
+
+            if (!roleArr.includes(role)) {
+                throw new Error('Access denied');
+            }
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
 
 };
