@@ -22,6 +22,7 @@ module.exports = {
     isUserBodyValid: (req, res, next) => {
         try {
             const {error, value} = userValidator.createUserValidator.validate(req.body);
+            userValidator.updateUserValidator.validate(req.body);
 
             if (error) {
                 return next(error.details[0].message);
@@ -55,19 +56,18 @@ module.exports = {
         }
     },
 
-    isUpdateBodyValid: (req, res, next) => {
+    isBodyValid: (validator) => (req, res, next) => {
         try {
-            const {error, value} = userValidator.updateUserValidator.validate(req.body);
+            const {error, value} = validator.validate(req.body);
 
             if (error) {
-                throw new Error(error.details[0].message);
+                return next(error.details[0].message, 400);
             }
 
-            req.user = value;
-
+            req.body = value;
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     }
 
