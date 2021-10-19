@@ -1,5 +1,8 @@
 module.exports = {
-    EMAIL_EXIST: 'Email already exist',
+    EMAIL_EXIST: {
+        message: 'Email already exist',
+        status: 404
+    },
 
     NOT_VALID_BODY: {
         message: 'Wrong email or password',
@@ -25,6 +28,7 @@ module.exports = {
         message: 'USER DELETED',
         status: 204
     },
+
     CREATED: {
         message: 'User created',
         status: 201
