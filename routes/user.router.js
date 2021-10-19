@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const { userController } = require('../controllers');
-const { userMiddleware } = require('../middlewares');
+const { userMiddleware} = require('../middlewares');
 const { userByIdMiddleware } = require('../middlewares');
 
 router.get('/', userController.getUsers);
@@ -21,8 +21,7 @@ router.put('/:user_id',
     userByIdMiddleware.checkIdMiddleware,
     userController.updateUser);
 
-router.delete('/:user_id',
-    userByIdMiddleware.checkIdMiddleware,
-    userController.deleteUser);
+router.delete('/',
+    userController.deleteAccount);
 
 module.exports = router;

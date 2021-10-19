@@ -1,6 +1,7 @@
 const authValidator = require('../validators/auth.validators');
 const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD} = require('../errors');
-const {passwordService} = require('../service');
+const {passwordService, jwtService} = require('../service');
+const {AUTHORIZATION} = require("../configs/constans");
 
 module.exports = {
     isUserBodyValid: async (req, res, next) => {
@@ -35,25 +36,23 @@ module.exports = {
         }
     },
 
-    // isUserPresent: async (req, res, next) => {
-    //     try {
-    //         const {email, password} = req.body;
-    //
-    //         const user = await User.findOne({email}).select('+password');
-    //
-    //         if (!user) {
-    //             throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.status, WRONG_EMAIL_OR_PASSWORD.message);
-    //         }
-    //
-    //         await passwordService.compare(password, user.password);
-    //
-    //         req.body = user;
-    //
-    //         next();
-    //     } catch (e) {
-    //         next(e);
-    //     }
-    // },
+    checkAccessToken: async (req, res, next) => {
+        try {
+            const token = req.get(AUTHORIZATION);
+
+
+            if (!token) {
+                throw new ErrorHandler('Invalid token', 401);
+            }
+            console.log(token);
+
+            await jwtService.verifyToken(token);
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    }
 
     // checkingRole: (roleArr = []) => (req, res, next) => {
     //     try {
