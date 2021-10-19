@@ -44,7 +44,7 @@ module.exports = {
         }
     },
 
-    updateUser: async (req, res) => {
+    updateUser: async (req, res, next) => {
         try {
             const {user_id} = req.params;
             const user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
