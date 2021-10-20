@@ -13,7 +13,6 @@ router.post('/',
 
 router.get('/:user_id',
     userByIdMiddleware.checkIdMiddleware,
-    userMiddleware.createUserMiddleware,
     userController.getUserById);
 
 router.put('/:user_id',
@@ -21,7 +20,8 @@ router.put('/:user_id',
     userByIdMiddleware.checkIdMiddleware,
     userController.updateUser);
 
-router.delete('/',
-    userController.deleteAccount);
+router.delete('/:user_id',
+    userByIdMiddleware.checkIdMiddleware,
+    userController.deleteUser);
 
 module.exports = router;

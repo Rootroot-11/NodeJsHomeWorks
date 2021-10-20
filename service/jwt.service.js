@@ -17,7 +17,7 @@ module.exports = {
     verifyToken: async (token, tokenType = 'access') => {
         try {
             const secret = tokenType === 'access' ? JWT_ACCESS_SECRET : JWT_REFRESH_SECRET;
-            await jwt.verify(token, secret);
+            await jwt.verify(token, secretWord);
         } catch (e) {
             throw new ErrorHandler('Invalid token', 401);
         }

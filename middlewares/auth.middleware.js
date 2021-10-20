@@ -1,7 +1,8 @@
 const authValidator = require('../validators/auth.validators');
 const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD} = require('../errors');
 const {passwordService, jwtService} = require('../service');
-const {AUTHORIZATION} = require("../configs/constans");
+const {AUTHORIZATION, REFRESH } = require("../configs");
+const {O_Auth} = require('../dataBase');
 
 module.exports = {
     isUserBodyValid: async (req, res, next) => {
@@ -36,13 +37,50 @@ module.exports = {
         try {
             const token = req.get(AUTHORIZATION);
 
+            if (!token) {
+                throw new ErrorHandler('Invalid token', 401);
+            }
+
+            await jwtService.verifyToken(token);
+
+            const tokenResponse = await O_Auth
+                .findOne({ access_token: token })
+                .populate('user_id');
+
+            if (!tokenResponse) {
+                throw new ErrorHandler('Invalid token', 401);
+            }
+
+            req.user = tokenResponse.user_id;
+            req.access_token = tokenResponse.access_token;
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
+
+    checkRefreshToken: async (req, res, next) => {
+        try {
+            const token = req.get(AUTHORIZATION);
 
             if (!token) {
                 throw new ErrorHandler('Invalid token', 401);
             }
-            console.log(token);
 
-            await jwtService.verifyToken(token);
+            await jwtService.verifyToken(token, REFRESH);
+
+            const tokenResponse = await O_Auth
+                .findOne({ refresh_token: token })
+                .populate('user_id');
+
+            if (!tokenResponse) {
+                throw new ErrorHandler('Invalid token', 401);
+            }
+
+            await O_Auth.deleteOne({ refresh_token: token });
+
+            req.user = tokenResponse.user_id;
 
             next();
         } catch (e) {

@@ -3,12 +3,12 @@ const {jwtService} = require('../service');
 const {O_Auth} = require('../dataBase');
 
 module.exports = {
-    loginUser: async (req, res) => {
+    loginUser: async (req, res, next) => {
         try {
             const {user} = req;
 
             const tokenPair = jwtService.generateTokenPair();
-            const normalizedUser = userNormalizator(user);
+            const normalizedUser = userNormalizator(user.toObject());
 
             await O_Auth.create({
                 ...tokenPair,
@@ -20,8 +20,21 @@ module.exports = {
                 ...tokenPair
             });
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
+
+    logout: async (req, res, next) => {
+        try {
+            const {access_token} = req;
+
+            await O_Auth.findOneAndDelete({ access_token });
+
+            res.json ('You are log out')
+
+        } catch (e) {
+            next(e);
+        }
+    }
 
 };
