@@ -88,17 +88,5 @@ module.exports = {
         }
     }
 
-
-    // checkingRole: (roleArr = []) => (req, res, next) => {
-    //     try {
-    //         if (!roleArr.includes(req.body.role)) {
-    //             throw new ErrorHandler(ACCESS.message, ACCESS.status);
-    //         }
-    //         next();
-    //     } catch (e) {
-    //         next(e);
-    //     }
-    // }
-
 };
 

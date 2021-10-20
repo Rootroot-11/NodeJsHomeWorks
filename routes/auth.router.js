@@ -20,6 +20,4 @@ router.post('/logout',
     authMiddleware.checkAccessToken,
     authController.logout);
 
-
-
 module.exports = router;
