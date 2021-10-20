@@ -24,10 +24,6 @@ module.exports = {
             const { password } = req.body;
             const { password: hashPassword } = req.user;
 
-            console.log('___________________________');
-            console.log(password);
-            console.log('___________________________');
-
             await passwordService.compare(password, hashPassword);
 
             next();
@@ -53,6 +49,7 @@ module.exports = {
             next(e);
         }
     }
+
 
     // checkingRole: (roleArr = []) => (req, res, next) => {
     //     try {
