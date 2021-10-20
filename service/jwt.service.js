@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-const {ErrorHandler} = require("../errors");
 
-const {JWT_ACCESS_SECRET, JWT_REFRESH_SECRET} = require('../configs/config');
+const {ErrorHandler} = require('../errors');
+const {JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, ACCESS} = require('../configs');
 
 module.exports = {
     generateTokenPair: () => {
@@ -14,9 +14,9 @@ module.exports = {
         };
     },
 
-    verifyToken: async (token, tokenType = 'access') => {
+    verifyToken: async (token, tokenType = ACCESS) => {
         try {
-            const secret = tokenType === 'access' ? JWT_ACCESS_SECRET : JWT_REFRESH_SECRET;
+            const secretWord = tokenType === ACCESS ? JWT_ACCESS_SECRET : JWT_REFRESH_SECRET;
             await jwt.verify(token, secretWord);
         } catch (e) {
             throw new ErrorHandler('Invalid token', 401);
