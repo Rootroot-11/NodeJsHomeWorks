@@ -1,5 +1,7 @@
 /package-lock.json
 .env
-
-/.idea/
+#idea
+/.idea
+./.idea
+./idea/*
 /node_modules
