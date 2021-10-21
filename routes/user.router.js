@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const userController = require('../controllers/user.controller');
 const {userMiddleware} = require('../middlewares');
-const userByIdMiddleware = require('../middlewares/userById.middleware');
+const {userByIdMiddleware} = require('../middlewares');
 
 router.get('/', userController.getUsers);
 

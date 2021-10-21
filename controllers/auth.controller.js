@@ -1,6 +1,6 @@
 const O_Auth = require('../dataBase/O_Auth');
 const {jwtService} = require('../service');
-const {userNormalizator} = require("../util/user.util");
+const {userNormalizator} = require('../util/user.util');
 const OAuthSchema = require('../dataBase/O_Auth');
 
 module.exports = {

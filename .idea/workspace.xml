@@ -5,26 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="Node 7">
-      <change afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/token-type.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/ActionToken.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/O_Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/jwt.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/conteiner.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/order-confirmed.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/welcome.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/email_service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/constans.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/ActionToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/ActionToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/user.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
+        <option value="Pug File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -47,6 +49,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -74,6 +77,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -99,6 +103,8 @@
       <workItem from="1634555127898" duration="294000" />
       <workItem from="1634644563096" duration="180000" />
       <workItem from="1634644821489" duration="1031000" />
+      <workItem from="1634833723355" duration="746000" />
+      <workItem from="1634834638042" duration="5280000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -247,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634778571381</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Node 7">
+      <created>1634834022052</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634834022052</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

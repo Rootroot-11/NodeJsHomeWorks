@@ -1,11 +1,13 @@
 const User = require('../dataBase/User');
-const userValidator = require('../validators/user.validator');
-const ErrorHandler = require('../errors/ErrorHandler');
+const userValidator = require('../validators/user.validators');
+const {ErrorHandler} = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
         try {
-            const userByEmail = await User.findOne({ email: req.body.email });
+            const {email} = req.body;
+
+            const userByEmail = await User.findOne({ email });
 
             if (userByEmail) {
                 return next({
@@ -27,7 +29,7 @@ module.exports = {
                 .select('+password');
 
             if (!userByEmail) {
-                throw new ErrorHandler('Wrong meail or password', 418);
+                throw new ErrorHandler('Wrong email or password', 418);
             }
 
             req.user = userByEmail;
@@ -73,10 +75,6 @@ module.exports = {
     checkUserRole: (roleArr = []) => (req, res, next) => {
         try {
             const { role } = req.user;
-
-            console.log('_____________________________________');
-            console.log(role);
-            console.log('_____________________________________');
 
             if (!roleArr.includes(role)) {
                 throw new Error('Access denied');

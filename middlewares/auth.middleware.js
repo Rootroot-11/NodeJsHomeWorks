@@ -1,7 +1,7 @@
-const { AUTHORIZATION } = require('../configs/constants');
+const { AUTHORIZATION } = require('../configs/constans');
 const tokenTypeEnum = require('../configs/token-type.enum');
 const { jwtService } = require('../service');
-const ErrorHandler = require("../errors/ErrorHandler");
+const {ErrorHandler} = require('../errors');
 const O_Auth = require('../dataBase/O_Auth');
 
 module.exports = {
@@ -54,4 +54,5 @@ module.exports = {
             next(e);
         }
     }
+
 };
