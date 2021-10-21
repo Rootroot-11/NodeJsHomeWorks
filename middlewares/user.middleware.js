@@ -1,34 +1,19 @@
 const User = require('../dataBase/User');
-const userValidator = require('../validators/user.validators');
-const { ErrorHandler, USER_NOT_FOUND } = require('../errors');
+const userValidator = require('../validators/user.validator');
+const ErrorHandler = require('../errors/ErrorHandler');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
         try {
-            const {email} = req.body;
-
-            const userByEmail = await User.findOne({email});
+            const userByEmail = await User.findOne({ email: req.body.email });
 
             if (userByEmail) {
-                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
+                return next({
+                    message: 'Email already exist',
+                    status: 404
+                });
             }
 
-            next();
-        } catch (e) {
-            next(e);
-        }
-    },
-
-    isUserBodyValid: (req, res, next) => {
-        try {
-            const {error, value} = userValidator.createUserValidator.validate(req.body);
-            userValidator.updateUserValidator.validate(req.body);
-
-            if (error) {
-                return next(error.details[0].message);
-            }
-
-            req.body = value;
             next();
         } catch (e) {
             next(e);
@@ -37,15 +22,12 @@ module.exports = {
 
     isUserPresent: async (req, res, next) => {
         try {
-            const {email} = req.body;
-
             const userByEmail = await User
-                .findOne({email})
-                .select('+password')
-                .lean();
+                .findOne({ email: req.body.email })
+                .select('+password');
 
             if (!userByEmail) {
-                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
+                throw new ErrorHandler('Wrong meail or password', 418);
             }
 
             req.user = userByEmail;
@@ -56,19 +38,53 @@ module.exports = {
         }
     },
 
-    isBodyValid: (validator) => (req, res, next) => {
+    isUserBodyValid: (req, res, next) => {
         try {
-            const {error, value} = validator.validate(req.body);
+            const { error, value } = userValidator.createUserValidator.validate(req.body);
 
             if (error) {
-                return next(error.details[0].message, 400);
+                throw new Error(error.details[0].message);
             }
 
             req.body = value;
+
             next();
         } catch (e) {
             next(e);
         }
-    }
+    },
 
+    isUpdateBodyValid: (req, res, next) => {
+        try {
+            const {error, value} = userValidator.updateUserValidator.validate(req.body);
+
+            if (error) {
+                throw new Error(error.details[0].message);
+            }
+
+            req.user = value;
+
+            next();
+        } catch (e) {
+            res.json(e.message);
+        }
+    },
+
+    checkUserRole: (roleArr = []) => (req, res, next) => {
+        try {
+            const { role } = req.user;
+
+            console.log('_____________________________________');
+            console.log(role);
+            console.log('_____________________________________');
+
+            if (!roleArr.includes(role)) {
+                throw new Error('Access denied');
+            }
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
 };

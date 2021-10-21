@@ -1,7 +1,6 @@
-const { User }= require('../dataBase');
-const { passwordService } = require('../service');
-const { userUtil } = require('../util');
-const { CREATED, USER_UPDATE } = require('../errors');
+const User = require('../dataBase/User');
+const { emailService, passwordService} = require('../service');
+const userUtil = require('../util/user.util');
 
 module.exports = {
     getUsers: async (req, res, next) => {
@@ -12,6 +11,7 @@ module.exports = {
         } catch (e) {
             next(e);
         }
+
     },
 
     getUserById: async (req, res, next) => {
@@ -20,7 +20,7 @@ module.exports = {
 
             const user = await User
                 .findById(user_id)
-                .select()
+                .select('-password')
                 .lean();
 
             res.json(user);
@@ -31,28 +31,28 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
-            const {password} = req.body;
+            const { password } = req.body;
 
             const hashedPassword = await passwordService.hash(password);
-            const newUser = User.create({...req.body, password: hashedPassword});
 
-            userUtil.userNormalizator(newUser);
+            const newUser = await User.create({...req.body, password: hashedPassword});
+            const userNormalized = userUtil.userNormalizator(newUser);
 
-            res.json(CREATED.message, CREATED.status);
+            res.json(userNormalized);
         } catch (e) {
             next(e);
         }
     },
 
-    updateUser: async (req, res, next) => {
+    updateUser: async (req, res) => {
         try {
             const {user_id} = req.params;
-            const user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
-            userUtil.userNormalizator(user);
+            let user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
+            user = userUtil.userNormalizator(user);
 
-            res.json(USER_UPDATE.message, USER_UPDATE.status);
+            res.json(user);
         } catch (e) {
-            next(e);
+            res.json(e.message);
         }
     },
 
@@ -60,9 +60,9 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            await User.findByIdAndDelete(user_id).select('-password');
+            const deleteUser = await User.findByIdAndDelete(user_id).select('-password');
 
-            res.sendStatus(204);
+            res.json(deleteUser);
         } catch (e) {
             next(e);
         }

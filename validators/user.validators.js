@@ -1,15 +1,15 @@
 const Joi = require('joi');
 
+const { EMAIL_REGEXP, PASSWORD_REGEXP } = require('../configs/constants');
 const userRoles = require('../configs/user-roles.enum');
-const { EMAIL_REGEXP, PASSWORD_REGEXP } = require('../configs/constans');
 
 const createUserValidator = Joi.object({
-    name: Joi.string()
+    name: Joi
+        .string()
         .alphanum()
         .min(2)
         .max(30)
         .trim()
-        .lowercase()
         .required(),
     email: Joi
         .string()
@@ -38,5 +38,6 @@ const updateUserValidator = Joi.object({
         .required()
 });
 
-module.exports = {createUserValidator, updateUserValidator};
-
+module.exports = {
+    createUserValidator, updateUserValidator
+};

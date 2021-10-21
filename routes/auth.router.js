@@ -1,12 +1,24 @@
-const loginRouter = require('express').Router();
+const router = require('express').Router();
 
-const { authController } = require('../controllers');
-const { authMiddleware, userMiddleware} = require('../middlewares');
+const authController = require('../controllers/auth.controller');
+const {authMiddleware, userMiddleware} = require('../middlewares');
+const {ADMIN, USER} = require("../configs/user-roles.enum");
 
-loginRouter.post('/',
-    authMiddleware.isUserBodyValid,
+router.post(
+    '/',
     userMiddleware.isUserPresent,
-    authMiddleware.isPasswordsMatched,
-    authController.loginUser);
+    userMiddleware.checkUserRole([
+        ADMIN,
+        USER
+    ]),
+    authController.login
+);
+router.post('/logout',
+    authMiddleware.checkAccessToken,
+    authController.logout);
 
-module.exports = loginRouter;
+router.post('/refresh',
+    authMiddleware.checkRefreshToken,
+    authController.refreshToken);
+
+module.exports = router;
