@@ -1,6 +1,6 @@
 const User = require('../dataBase/User');
-const userValidator = require('../validators/user.validators');
-const {ErrorHandler} = require('../errors');
+const {userValidator} = require('../validators');
+const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD, EMAIL_EXIST, BAD_REQUEST, ACCESS} = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
@@ -10,10 +10,7 @@ module.exports = {
             const userByEmail = await User.findOne({ email });
 
             if (userByEmail) {
-                return next({
-                    message: 'Email already exist',
-                    status: 404
-                });
+                throw new ErrorHandler(EMAIL_EXIST.message, EMAIL_EXIST.status);
             }
 
             next();
@@ -29,7 +26,7 @@ module.exports = {
                 .select('+password');
 
             if (!userByEmail) {
-                throw new ErrorHandler('Wrong email or password', 418);
+                throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status);
             }
 
             req.user = userByEmail;
@@ -45,7 +42,7 @@ module.exports = {
             const { error, value } = userValidator.createUserValidator.validate(req.body);
 
             if (error) {
-                throw new Error(error.details[0].message);
+                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
             req.body = value;
@@ -58,10 +55,10 @@ module.exports = {
 
     isUpdateBodyValid: (req, res, next) => {
         try {
-            const {error, value} = userValidator.updateUserValidator.validate(req.body);
+            const { error, value } = userValidator.updateUserValidator.validate(req.body);
 
             if (error) {
-                throw new Error(error.details[0].message);
+                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
             req.user = value;
@@ -77,7 +74,7 @@ module.exports = {
             const { role } = req.user;
 
             if (!roleArr.includes(role)) {
-                throw new Error('Access denied');
+                throw new ErrorHandler(ACCESS.message, ACCESS.status);
             }
 
             next();
@@ -85,4 +82,5 @@ module.exports = {
             next(e);
         }
     },
+
 };

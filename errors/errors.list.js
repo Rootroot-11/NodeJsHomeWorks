@@ -4,8 +4,8 @@ module.exports = {
         status: 404
     },
 
-    NOT_VALID_BODY: {
-        message: 'Wrong email or password',
+    BAD_REQUEST: {
+        message: 'Body is not valid',
         status: 400
     },
 
@@ -32,6 +32,11 @@ module.exports = {
     CREATED: {
         message: 'User created',
         status: 201
+    },
+
+    ACCESS: {
+        message: 'Access denied',
+        status: 400
     }
 
 };

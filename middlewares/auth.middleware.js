@@ -1,7 +1,7 @@
-const { AUTHORIZATION } = require('../configs/constans');
+const {AUTHORIZATION} = require('../configs/constans');
 const tokenTypeEnum = require('../configs/token-type.enum');
-const { jwtService } = require('../service');
-const {ErrorHandler} = require('../errors');
+const {jwtService} = require('../service');
+const {ErrorHandler, BAD_REQUEST} = require('../errors');
 const O_Auth = require('../dataBase/O_Auth');
 
 module.exports = {
@@ -10,15 +10,15 @@ module.exports = {
             const token = req.get(AUTHORIZATION);
 
             if (!token) {
-                throw new ErrorHandler('No token', 401);
+                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
             await jwtService.verifyToken(token);
 
-            const tokenResponse = await O_Auth.findOne({ access_token: token });
+            const tokenResponse = await O_Auth.findOne({access_token: token});
 
             if (!tokenResponse) {
-                throw new ErrorHandler('Invalid token', 401);
+                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
             req.user = tokenResponse.user_id;
@@ -39,13 +39,13 @@ module.exports = {
 
             await jwtService.verifyToken(token, tokenTypeEnum.REFRESH);
 
-            const tokenResponse = await O_Auth.findOne({ refresh_token: token });
+            const tokenResponse = await O_Auth.findOne({refresh_token: token});
 
             if (!tokenResponse) {
-                throw new ErrorHandler('Invalid token', 401);
+                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
-            await O_Auth.remove({ refresh_token: token });
+            await O_Auth.remove({refresh_token: token});
 
             req.user = tokenResponse.user_id;
 
