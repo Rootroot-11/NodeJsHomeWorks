@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="Node 7">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/container.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/login.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/logout.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/update.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/errors/errors-enum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/errors/errors_message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/conteiner.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/email-templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/order-confirmed.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/welcome.pug" beforeDir="false" afterPath="$PROJECT_DIR$/email-templates/welcome.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/user.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/user.util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="Pug File" />
         <option value="CSS File" />
+        <option value="Pug File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -86,7 +106,8 @@
       <workItem from="1634644821489" duration="1031000" />
       <workItem from="1634833723355" duration="746000" />
       <workItem from="1634834638042" duration="7139000" />
-      <workItem from="1634855434712" duration="684000" />
+      <workItem from="1634855434712" duration="13444000" />
+      <workItem from="1634898649151" duration="4963000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -263,7 +284,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634841648533</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Node 7">
+      <created>1634856270472</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634856270472</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Node 7">
+      <created>1634856326827</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634856326827</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

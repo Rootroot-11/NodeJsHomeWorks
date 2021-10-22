@@ -16,7 +16,8 @@ const createUserValidator = Joi.object({
         .regex(EMAIL_REGEXP)
         .trim()
         .required(),
-    role: Joi.string().allow(...Object.values(userRoles)),
+    role: Joi
+        .string().allow(...Object.values(userRoles)),
     password: Joi
         .string()
         .regex(PASSWORD_REGEXP)
@@ -31,11 +32,6 @@ const updateUserValidator = Joi.object({
         .max(30)
         .trim()
         .required(),
-    email: Joi
-        .string()
-        .regex(EMAIL_REGEXP)
-        .trim()
-        .required()
 });
 
 module.exports = {

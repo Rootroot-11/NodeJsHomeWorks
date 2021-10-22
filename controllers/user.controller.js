@@ -1,7 +1,8 @@
-const User = require('../dataBase/User');
-const { passwordService, emailService } = require('../service');
-const userUtil = require('../util/user.util');
-const { WELCOME } = require('../configs/email-action.enum');
+const {User} = require('../dataBase');
+const {passwordService, emailService} = require('../service');
+const {userUtil} = require('../util');
+const {WELCOME, UPDATE} = require('../configs');
+const {errors_code, errors_message} = require('../errors');
 
 module.exports = {
     getUsers: async (req, res, next) => {
@@ -12,7 +13,6 @@ module.exports = {
         } catch (e) {
             next(e);
         }
-
     },
 
     getUserById: async (req, res, next) => {
@@ -39,23 +39,27 @@ module.exports = {
 
             const newUser = await User.create({...req.body, password: hashedPassword});
 
-            await emailService.sendMail(email, WELCOME, {name} );
-
+            await emailService.sendMail(email, WELCOME, {name});
+            userUtil.userNormalizator(newUser);
             res.json(newUser);
         } catch (e) {
             next(e);
         }
     },
 
-    updateUser: async (req, res) => {
+    updateUser: async (req, res, next) => {
         try {
             const {user_id} = req.params;
+
             let user = await User.findByIdAndUpdate(user_id, req.body, {new: true}).lean();
+
+            await emailService.sendMail(user.email, UPDATE, {userName: user.name});
+
             user = userUtil.userNormalizator(user);
 
             res.json(user);
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
 
@@ -63,9 +67,9 @@ module.exports = {
         try {
             const {user_id} = req.params;
 
-            const deleteUser = await User.findByIdAndDelete(user_id).select('-password');
+            await User.findByIdAndDelete(user_id).select('-password');
 
-            res.json(deleteUser);
+            res.status(errors_code.DELETE_USER).json(errors_message.DELETEUSER);
         } catch (e) {
             next(e);
         }

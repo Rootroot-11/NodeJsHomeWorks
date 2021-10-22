@@ -1,5 +1,4 @@
 const User = require('../dataBase/User');
-const {userValidator} = require('../validators');
 const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD, EMAIL_EXIST, BAD_REQUEST, ACCESS} = require('../errors');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
         try {
             const {email} = req.body;
 
-            const userByEmail = await User.findOne({ email });
+            const userByEmail = await User.findOne({email}).select('-password');
 
             if (userByEmail) {
                 throw new ErrorHandler(EMAIL_EXIST.message, EMAIL_EXIST.status);
@@ -22,8 +21,8 @@ module.exports = {
     isUserPresent: async (req, res, next) => {
         try {
             const userByEmail = await User
-                .findOne({ email: req.body.email })
-                .select('+password');
+                .findOne({email: req.body.email})
+                .select('-password');
 
             if (!userByEmail) {
                 throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status);
@@ -37,25 +36,9 @@ module.exports = {
         }
     },
 
-    isUserBodyValid: (req, res, next) => {
+    isBodyValid: (validator) => (req, res, next) => {
         try {
-            const { error, value } = userValidator.createUserValidator.validate(req.body);
-
-            if (error) {
-                throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
-            }
-
-            req.body = value;
-
-            next();
-        } catch (e) {
-            next(e);
-        }
-    },
-
-    isUpdateBodyValid: (req, res, next) => {
-        try {
-            const { error, value } = userValidator.updateUserValidator.validate(req.body);
+            const {error, value} = validator.validate(req.body);
 
             if (error) {
                 throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
@@ -65,13 +48,13 @@ module.exports = {
 
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
     },
 
     checkUserRole: (roleArr = []) => (req, res, next) => {
         try {
-            const { role } = req.user;
+            const {role} = req.user;
 
             if (!roleArr.includes(role)) {
                 throw new ErrorHandler(ACCESS.message, ACCESS.status);

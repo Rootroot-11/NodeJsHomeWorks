@@ -6,8 +6,19 @@ module.exports = {
         subject: 'Welcome!!'
     },
 
-    [emailActionsEnum.ORDER_CONFIRMED]: {
-        templateName: 'order-confirmed',
-        subject: 'Cool!'
+    [emailActionsEnum.LOGIN]: {
+        templateName: 'login',
+        subject: 'You are log in'
+    },
+
+    [emailActionsEnum.LOGOUT]: {
+        templateName: 'logout',
+        subject: 'You are log out'
+    },
+
+    [emailActionsEnum.UPDATE]: {
+        templateName: 'update',
+        subject: 'You were update'
     }
+
 };
