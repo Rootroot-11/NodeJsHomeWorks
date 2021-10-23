@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="Node 7">
+      <change afterPath="$PROJECT_DIR$/configs/action-token-type.enum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-templates/forgotPassword.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/ActionToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/ActionToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/O_Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/O_Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/email-templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/jwt.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/jwt.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,15 +31,15 @@
       <list>
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="Pug File" />
         <option value="JavaScript File" />
+        <option value="Pug File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Node_7" />
+        <entry key="$PROJECT_DIR$" value="Node_7HomeWork" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/reakt6" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -88,7 +101,9 @@
       <workItem from="1634834638042" duration="7139000" />
       <workItem from="1634855434712" duration="13444000" />
       <workItem from="1634898649151" duration="5349000" />
-      <workItem from="1634953106218" duration="1020000" />
+      <workItem from="1634953106218" duration="3244000" />
+      <workItem from="1634984069957" duration="6846000" />
+      <workItem from="1635009189995" duration="9148000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -286,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634903899161</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Node 7">
+      <created>1634954396526</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1634954396526</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -23,6 +23,19 @@ module.exports = {
         } catch (e) {
             throw new ErrorHandler('Invalid token', 401);
         }
+    },
+
+    generateActionToken: (actionTokenType) => {
+        // let secretWord;
+
+        switch (actionTokenType) {
+            case FORGOT_PASSWORD:
+                // secretWord = 'Hello'; //To do from config
+                break;
+            default:
+                throw new ErrorHandler('Wrong token type', 500);
+        }
+        return jwt.sign({}, JWT_ACCESS_SECRET, { expiresIn: '24h' });
     }
 
 };

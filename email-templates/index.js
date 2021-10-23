@@ -19,6 +19,11 @@ module.exports = {
     [emailActionsEnum.UPDATE]: {
         templateName: 'update',
         subject: 'You were update'
+    },
+
+    [emailActionsEnum.FORGOT_PASSWORD]: {
+        templateName: 'forgot-password',
+        subject: 'Everybody forgot something'
     }
 
 };

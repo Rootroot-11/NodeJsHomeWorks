@@ -21,4 +21,6 @@ router.post('/refresh',
     authMiddleware.checkRefreshToken,
     authController.refreshToken);
 
+router.post('/password/forgot', authController.sendMailForgotPassword);
+
 module.exports = router;

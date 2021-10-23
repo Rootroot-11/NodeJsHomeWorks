@@ -4,5 +4,6 @@ module.exports = {
     LOGIN: 'login',
     LOGOUT: 'logout',
     DELETE: 'delete',
-    UPDATE: 'update'
+    UPDATE: 'update',
+    FORGOT_PASSWORD: 'FORGOT_PASSWORD'
 };

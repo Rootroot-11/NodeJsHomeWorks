@@ -41,6 +41,10 @@ module.exports = {
 
             const tokenResponse = await O_Auth.findOne({refresh_token: token});
 
+            console.log('______');
+            console.log(tokenResponse);
+            console.log('_______');
+
             if (!tokenResponse) {
                 throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }

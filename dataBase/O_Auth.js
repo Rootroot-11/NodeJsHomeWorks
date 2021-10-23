@@ -17,7 +17,11 @@ const oAuthSchema = new Schema({
         ref: 'user'
     },
 
-}, { timestamps: true });
+}, { timestamps: true, toObject: { virtuals: true }, toJSON: {virtuals: true}});
+
+oAuthSchema.pre('find', function(){
+    this.populate('user_id');
+});
 
 module.exports = model('o_auth', oAuthSchema);
 

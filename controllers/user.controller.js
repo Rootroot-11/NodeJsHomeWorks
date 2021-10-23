@@ -1,7 +1,7 @@
 const {User} = require('../dataBase');
-const {passwordService, emailService} = require('../service');
+const {emailService} = require('../service');
 const {userUtil} = require('../util');
-const {WELCOME, UPDATE} = require('../configs');
+const { UPDATE} = require('../configs');
 const {errors_code, errors_message} = require('../errors');
 
 module.exports = {
@@ -24,22 +24,20 @@ module.exports = {
                 .select('-password')
                 .lean();
 
+            User.testStatic(111);
             res.json(user);
         } catch (e) {
             next(e);
         }
     },
 
-    createUser: async (req, res, next) => {
+    createUser:  (req, res, next) => {
         try {
+            // const {email, name} = req.body;
 
-            const {email, password, name} = req.body;
+            // const newUser = await User.createUserWithHashPassword(req.body);
 
-            const hashedPassword = await passwordService.hash(password);
-
-            const newUser = await User.create({...req.body, password: hashedPassword});
-
-            await emailService.sendMail(email, WELCOME, {name});
+            // await emailService.sendMail(email, WELCOME, {name});
             userUtil.userNormalizator(newUser);
             res.json(newUser);
         } catch (e) {
