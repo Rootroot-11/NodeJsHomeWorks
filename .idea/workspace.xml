@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="Node 7">
+    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="zzzz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/O_Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/O_Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Node_7" />
+        <entry key="$PROJECT_DIR$" value="Node_6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +69,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9303cc55-581a-4e64-8125-1ded48c28ef2" name="Changes" comment="" />
+      <changelist id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="zzzz" />
       <created>1633008359997</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -89,6 +89,7 @@
       <workItem from="1634855434712" duration="13444000" />
       <workItem from="1634898649151" duration="5349000" />
       <workItem from="1634953106218" duration="1020000" />
+      <workItem from="1635029632729" duration="1104000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
