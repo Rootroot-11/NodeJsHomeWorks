@@ -1,29 +1,24 @@
-const {O_Auth, OAuthSchema} = require('../dataBase/O_Auth');
-const {jwtService, emailService} = require('../service');
-const {userNormalizator} = require('../util/user.util');
-const {LOGIN, LOGOUT} = require('../configs');
+const {O_Auth, User, ActionToken } = require('../dataBase');
+const {emailService, passwordService, jwtService} = require('../service');
+const {userUtil} = require('../util');
+// const {LOGIN, LOGOUT} = require('../configs');
 const {ErrorHandler} = require('../errors');
-const {User} = require('../dataBase');
 const ActionTokenTypeEnum = require('../configs/action-token-type.enum');
 const EmailActionEnum = require('../configs/email-action.enum');
-const ActionToken = require('../dataBase/ActionToken');
 
 module.exports = {
     login: async (req, res, next) => {
         try {
-            const {user} = req;
-            const {email, name} = req.body;
+            const user = req.user;
 
-            // await user.comparePassword(req.body.password);
             const tokenPair = jwtService.generateTokenPair();
 
-            const userNormalized = userNormalizator(user);
+            const normalizedUser = userUtil.userNormalizator(user.toObject());
 
-            await OAuthSchema.create({...tokenPair, user_id: userNormalized._id});
+            await O_Auth.create({...tokenPair, user_id: normalizedUser._id});
 
-            await emailService.sendMail(email, LOGIN, {name});
             res.json({
-                user: userNormalized,
+                user: normalizedUser,
                 ...tokenPair
             });
         } catch (e) {
@@ -33,13 +28,9 @@ module.exports = {
 
     logout: async (req, res, next) => {
         try {
-            const {user} = req;
-            const {email, name} = req.body;
+            await User.find();
 
-            await OAuthSchema.deleteOne({user_id: user._id});
-            await emailService.sendMail(email, LOGOUT, {name});
-
-            res.end('You are logout');
+            res.json('You are logout');
         } catch (e) {
             next(e);
         }
@@ -48,9 +39,10 @@ module.exports = {
     refreshToken: async (req, res, next) => {
         try {
             const {user} = req;
+
             const tokenPair = jwtService.generateTokenPair();
 
-            const userNormalized = userNormalizator(user);
+            const userNormalized = userUtil.userNormalizator(user);
 
             await O_Auth.create({
                 ...tokenPair,
@@ -68,12 +60,11 @@ module.exports = {
 
     sendMailForgotPassword: async (req, res, next) => {
         try {
-
             const {email} = req.body;
 
-            const user = User.findOne({email});
+            const user = await User.findOne({email});
 
-            if(!user) {
+            if (!user) {
                 throw new ErrorHandler('User not found', 404);
             }
 
@@ -85,12 +76,32 @@ module.exports = {
                 user_id: user._id
             });
 
-            await emailService.sendMail(email, EmailActionEnum.FORGOT_PASSWORD,
+            await emailService.sendMail(
+                email,
+                EmailActionEnum.FORGOT_PASSWORD,
                 {forgotPasswordUrl: `http://localhost:3000/passwordForgot?token=${actionToken}`});
-            res.end('Ok');
+            console.log({ActionToken});
+            res.json('Ok');
+        } catch (e) {
+            next(e);
+        }
+    },
+
+    setNewPasswordAfterForgot: async (req, res, next) => {
+        try {
+            const {user, body: {password}} = req;
+
+            const newPassword = await passwordService.hash(password);
+
+            await User.findByIdAndUpdate({_id: user._id}, {password: newPassword});
+
+            await O_Auth.deleteMany({user_id: user._id});
+
+            res.json('okey');
         } catch (e) {
             next(e);
         }
     }
+
 };
 

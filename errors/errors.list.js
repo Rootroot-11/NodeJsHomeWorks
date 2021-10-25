@@ -37,6 +37,11 @@ module.exports = {
     ACCESS: {
         message: 'Access denied',
         status: 400
+    },
+
+    WRONG_TOKEN: {
+        message: 'Wrong token',
+        status: 401
     }
 
 };

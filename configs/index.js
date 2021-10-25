@@ -1,12 +1,19 @@
-const {MONGO_CONNECT_URL, PORT} = require('./config');
-const {PASSWORD_REGEXP, EMAIL_REGEXP, DEFAULT_STATUS_ERR} = require('./constans');
+const {MONGO_CONNECT_URL, PORT, JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, JWT_FORGOT_PASSWORD_SECRET} = require('./config');
+const {PASSWORD_REGEXP, EMAIL_REGEXP, AUTHORIZATION, DEFAULT_STATUS_ERR} = require('./constans');
 const userRoles = require('./user-roles.enum');
-const AUTHORIZATION = require('./constans');
-const {WELCOME, ORDER_CONFIRMED, LOGIN, LOGOUT, DELETE, UPDATE} = require('./email-action.enum');
+const {WELCOME, ORDER_CONFIRMED, LOGIN, LOGOUT, DELETE, UPDATE, NEW_USER_PASSWORD} = require('./email-action.enum');
+const { ACTION_MODEL, O_AUTH_MODEL, POST_MODEL, USER_MODEL } = require('./model-names.enum');
+const {ACCESS, REFRESH, ACTION} = require('./token-type.enum');
+const {FORGOT_PASSWORD} = require('./action-token-type.enum');
+
 
 module.exports = {
     MONGO_CONNECT_URL, PORT,
     PASSWORD_REGEXP, EMAIL_REGEXP, DEFAULT_STATUS_ERR,
     userRoles, AUTHORIZATION,
-    WELCOME, ORDER_CONFIRMED, LOGIN, LOGOUT, DELETE, UPDATE
+    WELCOME, ORDER_CONFIRMED, LOGIN, LOGOUT, DELETE, UPDATE,
+    NEW_USER_PASSWORD, JWT_REFRESH_SECRET, JWT_ACCESS_SECRET, JWT_FORGOT_PASSWORD_SECRET,
+    ACTION_MODEL, O_AUTH_MODEL, POST_MODEL, USER_MODEL,
+    ACCESS, REFRESH, ACTION, FORGOT_PASSWORD,
+    config: require('./config')
 };

@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const ActionTokenTypeEnum = require('../configs/action-token-type.enum');
+const {FORGOT_PASSWORD} = require('../configs');
 
 const actionTokenSchema = new Schema({
     token: {
@@ -12,7 +13,7 @@ const actionTokenSchema = new Schema({
         type: String,
         required: true,
         enum: Object.values(ActionTokenTypeEnum),
-        trim: true
+        default: FORGOT_PASSWORD
     },
     user_id: {
         type: Schema.Types.ObjectId,
@@ -20,7 +21,7 @@ const actionTokenSchema = new Schema({
         ref: 'user'
     },
 
-}, { timestamps: true, toObject: { virtuals: true }, toJSON: { virtuals: true } });
+}, { timestamps: true });
 
 actionTokenSchema.pre('findOne', function() {
     this.populate('user_id');

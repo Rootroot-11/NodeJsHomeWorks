@@ -1,4 +1,4 @@
-const {User} = require('../dataBase');
+const User = require('../dataBase/User');
 const {emailService} = require('../service');
 const {userUtil} = require('../util');
 const { UPDATE} = require('../configs');
@@ -24,20 +24,18 @@ module.exports = {
                 .select('-password')
                 .lean();
 
-            User.testStatic(111);
             res.json(user);
         } catch (e) {
             next(e);
         }
     },
 
-    createUser:  (req, res, next) => {
+    createUser: async (req, res, next) => {
         try {
-            // const {email, name} = req.body;
 
-            // const newUser = await User.createUserWithHashPassword(req.body);
+            const newUser = await User.createUserWithHashPassword(req.body);
 
-            // await emailService.sendMail(email, WELCOME, {name});
+            await emailService.sendMail(email, WELCOME, {name});
             userUtil.userNormalizator(newUser);
             res.json(newUser);
         } catch (e) {

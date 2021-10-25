@@ -18,35 +18,44 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        select: false
+        // select: false
     },
     role: {
         type: String,
         default: userRoles.USER,
         enum: Object.values(userRoles)
     }
-}, {timestamps: true, toObject: { virtuals: true}, toJSON: {virtuals: true} });
+}, {timestamps: true});
 
+userSchema.virtual('fullName').get(function() {
+    return `${this.name} ${this.role} HA-HA`;
+});
 
 userSchema.methods = {
+    randomMethod() {
+        console.log('**********************************************');
+        console.log(this);
+        console.log('**********************************************');
+    },
+
     comparePassword(password) {
         return passwordService.compare(password, this.password);
     }
 };
 
 userSchema.statics = {
-    testStatic(msg) {
-        console.log('Test static', msg);
-    },
+    // testStatic(msg) {
+    //     console.log('*******************');
+    //     console.log('TEST STATIC', msg);
+    //     console.log('TEST STATIC', msg);
+    //     console.log('*******************');
+    // },
 
     async createUserWithHashPassword(userObject) {
         const hashedPassword = await passwordService.hash(userObject.password);
-        return this.create({...userObject, password: hashedPassword });
+
+        return this.create({...userObject, password: hashedPassword});
     }
 };
-
-userSchema.virtual('fullname').get(function() {
-    return `${this.name} ${this.role} HA - HA`;
-});
 
 module.exports = model('user', userSchema);

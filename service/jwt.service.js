@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
 
-const { JWT_ACCESS_SECRET, JWT_REFRESH_SECRET } = require('../configs/config');
-const tokenTypeEnum = require('../configs/token-type.enum');
-const ErrorHandler = require('../errors/ErrorHandler');
+const {FORGOT_PASSWORD, ACCESS, REFRESH, JWT_FORGOT_PASSWORD_SECRET, JWT_ACCESS_SECRET,
+    JWT_REFRESH_SECRET} = require('../configs');
+const {ErrorHandler, WRONG_TOKEN} = require('../errors');
+const ActionTokenType = require('../configs/action-token-type.enum');
 
 module.exports = {
     generateTokenPair: () => {
-        const access_token = jwt.sign({}, JWT_ACCESS_SECRET, { expiresIn: '15m' });
-        const refresh_token = jwt.sign({}, JWT_REFRESH_SECRET, { expiresIn: '30d' });
+        const access_token = jwt.sign({}, JWT_ACCESS_SECRET, {expiresIn: '15m'});
+        const refresh_token = jwt.sign({}, JWT_REFRESH_SECRET, {expiresIn: '30d'});
 
         return {
             access_token,
@@ -15,27 +16,64 @@ module.exports = {
         };
     },
 
-    verifyToken: async (token, tokenType = tokenTypeEnum.ACCESS) => {
+    verifyToken: async (token, tokenType) => {
         try {
-            const secret = tokenType === tokenTypeEnum.ACCESS ? JWT_ACCESS_SECRET : JWT_REFRESH_SECRET;
+            let secretWord;
 
-            await jwt.verify(token, secret);
+            switch (tokenType) {
+                case ACCESS:
+                    secretWord = JWT_ACCESS_SECRET;
+                    break;
+                case REFRESH:
+                    secretWord = JWT_REFRESH_SECRET;
+                    break;
+                case FORGOT_PASSWORD:
+                    secretWord = JWT_FORGOT_PASSWORD_SECRET;
+                    break;
+                case ACTIVATE_ACCOUNT:
+                    secretWord = JWT_ACTIVATE_ACCOUNT_SECRET;
+                    break;
+                default:
+                    throw new ErrorHandler( WRONG_TOKEN.message, WRONG_TOKEN.status);
+            }
+
+            await jwt.verify(token, secretWord);
         } catch (e) {
-            throw new ErrorHandler('Invalid token', 401);
+            throw new ErrorHandler(WRONG_TOKEN.message, WRONG_TOKEN.status);
         }
     },
 
     generateActionToken: (actionTokenType) => {
-        // let secretWord;
+        let secretWord;
 
         switch (actionTokenType) {
-            case FORGOT_PASSWORD:
-                // secretWord = 'Hello'; //To do from config
+            case ActionTokenType.FORGOT_PASSWORD:
+                secretWord = 'HELLO'; // TODO from config
                 break;
             default:
                 throw new ErrorHandler('Wrong token type', 500);
         }
-        return jwt.sign({}, JWT_ACCESS_SECRET, { expiresIn: '24h' });
-    }
+
+        return jwt.sign({}, secretWord, {expiresIn: '24h'});
+    },
+
+
+    verifyActionToken: async (token, actionTokenType) => {
+        try {
+            let secret;
+
+            switch (actionTokenType) {
+                case ActionTokenType.FORGOT_PASSWORD:
+                    secret = 'HELLO';
+                    break;
+                default:
+                    throw new ErrorHandler(WRONG_TOKEN.message, WRONG_TOKEN.status);
+            }
+
+            await jwt.verify(token, secret);
+        } catch (e) {
+            throw new ErrorHandler(WRONG_TOKEN.message, WRONG_TOKEN.status);
+        }
+    },
 
 };
