@@ -1,7 +1,6 @@
 const {O_Auth, User, ActionToken } = require('../dataBase');
 const {emailService, passwordService, jwtService} = require('../service');
 const {userUtil} = require('../util');
-// const {LOGIN, LOGOUT} = require('../configs');
 const {ErrorHandler} = require('../errors');
 const ActionTokenTypeEnum = require('../configs/action-token-type.enum');
 const EmailActionEnum = require('../configs/email-action.enum');

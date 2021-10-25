@@ -30,11 +30,8 @@ module.exports = {
                 case FORGOT_PASSWORD:
                     secretWord = JWT_FORGOT_PASSWORD_SECRET;
                     break;
-                case ACTIVATE_ACCOUNT:
-                    secretWord = JWT_ACTIVATE_ACCOUNT_SECRET;
-                    break;
-                default:
-                    throw new ErrorHandler( WRONG_TOKEN.message, WRONG_TOKEN.status);
+            //     default:
+            //         throw new ErrorHandler( WRONG_TOKEN.message, WRONG_TOKEN.status);
             }
 
             await jwt.verify(token, secretWord);

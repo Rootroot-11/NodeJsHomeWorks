@@ -6,5 +6,6 @@ module.exports = {
     DELETE: 'delete',
     UPDATE: 'update',
     FORGOT_PASSWORD: 'FORGOT_PASSWORD',
-    NEW_USER_PASSWORD: 'newUserPassword'
+    NEW_USER_PASSWORD: 'newUserPassword',
+    REGISTERED_USER: 'registeredUser'
 };

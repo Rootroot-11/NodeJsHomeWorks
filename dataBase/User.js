@@ -18,7 +18,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        // select: false
+        select: false
     },
     role: {
         type: String,
@@ -32,25 +32,12 @@ userSchema.virtual('fullName').get(function() {
 });
 
 userSchema.methods = {
-    randomMethod() {
-        console.log('**********************************************');
-        console.log(this);
-        console.log('**********************************************');
-    },
-
     comparePassword(password) {
         return passwordService.compare(password, this.password);
     }
 };
 
 userSchema.statics = {
-    // testStatic(msg) {
-    //     console.log('*******************');
-    //     console.log('TEST STATIC', msg);
-    //     console.log('TEST STATIC', msg);
-    //     console.log('*******************');
-    // },
-
     async createUserWithHashPassword(userObject) {
         const hashedPassword = await passwordService.hash(userObject.password);
 

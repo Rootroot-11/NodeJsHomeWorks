@@ -1,8 +1,8 @@
-const User = require('../dataBase/User');
-const {emailService} = require('../service');
-const {userUtil} = require('../util');
-const { UPDATE} = require('../configs');
-const {errors_code, errors_message} = require('../errors');
+const User = require('../dataBase');
+const { emailService, passwordService } = require('../service');
+const { userUtil } = require('../util');
+const { UPDATE, WELCOME } = require('../configs');
+const { CREATED, USER_DELETE } = require('../errors');
 
 module.exports = {
     getUsers: async (req, res, next) => {
@@ -32,12 +32,16 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
+            const {email, password, name} = req.body;
 
-            const newUser = await User.createUserWithHashPassword(req.body);
+            const hashedPassword = await passwordService.hash(password);
+
+            const newUser = await User.create({...req.body, password: hashedPassword});
 
             await emailService.sendMail(email, WELCOME, {name});
             userUtil.userNormalizator(newUser);
-            res.json(newUser);
+
+            res.json(CREATED.message, CREATED.status);
         } catch (e) {
             next(e);
         }
@@ -65,7 +69,7 @@ module.exports = {
 
             await User.findByIdAndDelete(user_id).select('-password');
 
-            res.status(errors_code.DELETE_USER).json(errors_message.DELETEUSER);
+            res.json(USER_DELETE.message, USER_DELETE.status);
         } catch (e) {
             next(e);
         }

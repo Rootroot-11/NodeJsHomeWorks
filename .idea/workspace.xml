@@ -4,33 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 7">
-      <change afterPath="$PROJECT_DIR$/configs/model-names.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/email-templates/forgot-password.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/action-token-type.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/action-token-type.enum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/constans.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/token-type.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/token-type.enum.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/ActionToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/ActionToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/O_Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/O_Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-templates/forgotPassword.pug" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/errors-enum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/errors.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/errors_message.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/jwt.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/jwt.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +100,7 @@
       <workItem from="1635027404978" duration="377000" />
       <workItem from="1635065759231" duration="35725000" />
       <workItem from="1635157620459" duration="2282000" />
-      <workItem from="1635181008740" duration="5504000" />
+      <workItem from="1635181008740" duration="7952000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -338,7 +319,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635022475750</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="node 8">
+      <created>1635187188065</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1635187188065</updated>
+    </task>
+    <task id="LOCAL-00033" summary="node 8">
+      <created>1635187258751</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1635187258751</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +362,7 @@
     <MESSAGE value="node 5 hw" />
     <MESSAGE value="Node 7" />
     <MESSAGE value="Node 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Node 8" />
+    <MESSAGE value="node 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 8" />
   </component>
 </project>
