@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/jwt.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/jwt.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +96,7 @@
       <workItem from="1635027404978" duration="377000" />
       <workItem from="1635065759231" duration="35725000" />
       <workItem from="1635157620459" duration="2282000" />
-      <workItem from="1635181008740" duration="7952000" />
+      <workItem from="1635181008740" duration="8849000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -333,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635187258751</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="node 8">
+      <created>1635190558046</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635190558046</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

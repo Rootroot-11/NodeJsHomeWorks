@@ -1,4 +1,4 @@
-const User = require('../dataBase');
+const {User} = require('../dataBase');
 const { emailService, passwordService } = require('../service');
 const { userUtil } = require('../util');
 const { UPDATE, WELCOME } = require('../configs');
