@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const authController = require('../controllers/auth.controller');
 const {authMiddleware, userMiddleware} = require('../middlewares');
-// const {ADMIN, USER} = require('../configs/user-roles.enum');
+// const {ADMIN, USER} = require('../configs/user-roles.enum')
 const {FORGOT_PASSWORD} = require('../configs');
 const {authValidator} = require('../validators');
 
