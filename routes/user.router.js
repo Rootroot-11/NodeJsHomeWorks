@@ -19,12 +19,13 @@ router.get('/:user_id',
 
 router.put('/:user_id',
     userMiddleware.isBodyValid(userValidator.updateUserValidator),
+    authMiddleware.checkAccessToken,
     userByIdMiddleware.checkIdMiddleware,
     userController.updateUser);
 
 router.delete('/:user_id',
-    userByIdMiddleware.checkIdMiddleware,
     authMiddleware.checkAccessToken,
+    userByIdMiddleware.checkIdMiddleware,
     userController.deleteUser);
 
 module.exports = router;

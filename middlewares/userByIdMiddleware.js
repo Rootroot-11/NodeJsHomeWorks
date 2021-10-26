@@ -11,7 +11,6 @@ module.exports = {
                 throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
             }
             req.user = oneUser;
-
             next();
         } catch (e) {
             next(e);

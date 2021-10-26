@@ -15,15 +15,9 @@ module.exports = {
         }
     },
 
-    getUserById: async (req, res, next) => {
+    getUserById: (req, res, next) => {
         try {
-            const {user_id} = req.params;
-
-            const user = await User
-                .findById(user_id)
-                .select('-password')
-                .lean();
-
+            const {user} = req;
             res.json(user);
         } catch (e) {
             next(e);
@@ -74,5 +68,4 @@ module.exports = {
             next(e);
         }
     }
-
 };

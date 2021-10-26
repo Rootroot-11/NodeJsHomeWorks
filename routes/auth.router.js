@@ -7,7 +7,9 @@ const {FORGOT_PASSWORD} = require('../configs');
 
 router.post(
     '/',
+    //todo valid
     userMiddleware.isUserPresent,
+    authMiddleware.checkPassword,
     authController.login
 );
 
@@ -19,9 +21,12 @@ router.post('/refresh',
     authMiddleware.checkRefreshToken,
     authController.refreshToken);
 
-router.post('/password/forgot', authController.sendMailForgotPassword);
+router.post('/password/forgot',
+    // TODO add validator (email)
+    authController.sendMailForgotPassword);
 
 router.put('/password/forgot',
+    // TODO add validator (password)
     authMiddleware.checkActionToken(FORGOT_PASSWORD),
     authController.setNewPasswordAfterForgot);
 
