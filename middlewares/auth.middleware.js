@@ -63,7 +63,7 @@ module.exports = {
                 throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
-            await jwtService.verifyToken(token, tokenType);
+            await jwtService.verifyActionToken(token, tokenType);
 
             const tokenResponse = await ActionToken.findOne({ token });
 

@@ -1,4 +1,4 @@
-const {O_Auth, User, ActionToken } = require('../dataBase');
+const {O_Auth, User, ActionToken} = require('../dataBase');
 const {emailService, passwordService, jwtService} = require('../service');
 const {userUtil} = require('../util');
 const {ErrorHandler} = require('../errors');
