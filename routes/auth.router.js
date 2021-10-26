@@ -4,10 +4,11 @@ const authController = require('../controllers/auth.controller');
 const {authMiddleware, userMiddleware} = require('../middlewares');
 // const {ADMIN, USER} = require('../configs/user-roles.enum');
 const {FORGOT_PASSWORD} = require('../configs');
+const {authValidator} = require('../validators');
 
 router.post(
     '/',
-    //todo valid
+    userMiddleware.isBodyValid(authValidator.authValid),
     userMiddleware.isUserPresent,
     authMiddleware.checkPassword,
     authController.login

@@ -2,7 +2,7 @@ const {AUTHORIZATION} = require('../configs/constans');
 const tokenTypeEnum = require('../configs/token-type.enum');
 const {jwtService, passwordService} = require('../service');
 const {ErrorHandler, BAD_REQUEST} = require('../errors');
-const {O_Auth, ActionToken } = require('../dataBase');
+const {O_Auth, ActionToken} = require('../dataBase');
 
 module.exports = {
     checkPassword: async (req, res, next) => {
