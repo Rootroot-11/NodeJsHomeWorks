@@ -133,7 +133,7 @@
       "properties": {
         "msg": {
           "type": "string",
-          "example": "SOmthisng went worng"
+          "example": "Something went wrong"
         },
         "code": {
           "type": "number",
