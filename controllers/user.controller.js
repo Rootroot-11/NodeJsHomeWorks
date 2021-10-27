@@ -1,5 +1,5 @@
 const {User} = require('../dataBase');
-const { emailService, passwordService } = require('../service');
+const { emailService, passwordService, userService } = require('../service');
 const { userUtil } = require('../util');
 const { UPDATE, WELCOME } = require('../configs');
 const { CREATED, USER_DELETE } = require('../errors');
@@ -7,7 +7,7 @@ const { CREATED, USER_DELETE } = require('../errors');
 module.exports = {
     getUsers: async (req, res, next) => {
         try {
-            const users = await User.find();
+            const users = await userService.getAllUsers(req.query);
 
             res.json(users);
         } catch (e) {
@@ -15,14 +15,9 @@ module.exports = {
         }
     },
 
-    getUserById: async (req, res, next) => {
+    getUserById: (req, res, next) => {
         try {
-            const {user_id} = req.params;
-
-            const user = await User
-                .findById(user_id)
-                .select('-password')
-                .lean();
+            const {user} = req;
 
             res.json(user);
         } catch (e) {

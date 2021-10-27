@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 const userRoles = require('../configs/user-roles.enum');
-const {passwordService} = require('../service');
+const {passwordService} = require('../service/password.service');
 
 const userSchema = new Schema({
     name: {
@@ -24,7 +24,10 @@ const userSchema = new Schema({
         type: String,
         default: userRoles.USER,
         enum: Object.values(userRoles)
-    }
+    },
+    age: {
+        type: Number
+    },
 }, {timestamps: true});
 
 userSchema.virtual('fullName').get(function() {

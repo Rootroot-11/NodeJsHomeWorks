@@ -8,6 +8,7 @@ const {FORGOT_PASSWORD} = require('../configs');
 router.post(
     '/',
     userMiddleware.isUserPresent,
+    authMiddleware.checkPassword,
     authController.login
 );
 

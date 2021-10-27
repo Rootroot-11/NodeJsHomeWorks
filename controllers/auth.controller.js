@@ -1,7 +1,7 @@
-const {O_Auth, User, ActionToken } = require('../dataBase');
+const {O_Auth, User, ActionToken} = require('../dataBase');
 const {emailService, passwordService, jwtService} = require('../service');
 const {userUtil} = require('../util');
-const {ErrorHandler} = require('../errors');
+const {ErrorHandler, USER_NOT_FOUND} = require('../errors');
 const ActionTokenTypeEnum = require('../configs/action-token-type.enum');
 const EmailActionEnum = require('../configs/email-action.enum');
 
@@ -27,7 +27,9 @@ module.exports = {
 
     logout: async (req, res, next) => {
         try {
-            await User.find();
+            const {token} = req;
+
+            await O_Auth.deleteOne({access_token: token});
 
             res.json('You are logout');
         } catch (e) {
@@ -64,7 +66,7 @@ module.exports = {
             const user = await User.findOne({email});
 
             if (!user) {
-                throw new ErrorHandler('User not found', 404);
+                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
             }
 
             const actionToken = jwtService.generateActionToken(ActionTokenTypeEnum.FORGOT_PASSWORD);

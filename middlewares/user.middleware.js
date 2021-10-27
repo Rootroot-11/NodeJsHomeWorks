@@ -22,7 +22,7 @@ module.exports = {
         try {
             const userByEmail = await User
                 .findOne({email: req.body.email})
-                .select('-password');
+                .select('+password');
 
             if (!userByEmail) {
                 throw new ErrorHandler(WRONG_EMAIL_OR_PASSWORD.message, WRONG_EMAIL_OR_PASSWORD.status);

@@ -1,10 +1,23 @@
 const {AUTHORIZATION} = require('../configs/constans');
 const tokenTypeEnum = require('../configs/token-type.enum');
-const {jwtService} = require('../service');
+const {jwtService, passwordService} = require('../service');
 const {ErrorHandler, BAD_REQUEST} = require('../errors');
 const {O_Auth, ActionToken} = require('../dataBase');
 
 module.exports = {
+    checkPassword: async (req, res, next) => {
+        try {
+            const {password} = req.body;
+            const {user} = req;
+
+            await passwordService.compare(password, user.password);
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
+
     checkAccessToken: async (req, res, next) => {
         try {
             const token = req.get(AUTHORIZATION);
@@ -63,15 +76,15 @@ module.exports = {
                 throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
-            await jwtService.verifyToken(token, tokenType);
+            await jwtService.verifyActionToken(token, tokenType);
 
-            const tokenResponse = await ActionToken.findOne({ token });
+            const tokenResponse = await ActionToken.findOne({token});
 
             if (!tokenResponse) {
                 throw new ErrorHandler(BAD_REQUEST.message, BAD_REQUEST.status);
             }
 
-            await ActionToken.deleteOne({ token });
+            await ActionToken.deleteOne({token});
 
             req.user = tokenResponse.user_id;
 
