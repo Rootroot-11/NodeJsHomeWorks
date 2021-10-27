@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 8">
-      <change afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/user.service.js" afterDir="false" />
+    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 9v">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/password.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +98,7 @@
       <workItem from="1635247508235" duration="1838000" />
       <workItem from="1635330617969" duration="1356000" />
       <workItem from="1635334677627" duration="4435000" />
-      <workItem from="1635344232908" duration="5637000" />
+      <workItem from="1635344232908" duration="7128000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -359,7 +345,28 @@
       <option name="project" value="LOCAL" />
       <updated>1635191435015</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="node 9">
+      <created>1635352759833</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1635352759833</updated>
+    </task>
+    <task id="LOCAL-00037" summary="node 9v">
+      <created>1635352849456</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1635352849456</updated>
+    </task>
+    <task id="LOCAL-00038" summary="node 9v">
+      <created>1635352873445</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1635352873445</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +396,8 @@
     <MESSAGE value="Node 7" />
     <MESSAGE value="Node 8" />
     <MESSAGE value="node 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 8" />
+    <MESSAGE value="node 9" />
+    <MESSAGE value="node 9v" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 9v" />
   </component>
 </project>
