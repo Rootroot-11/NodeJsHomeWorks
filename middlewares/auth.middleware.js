@@ -5,6 +5,22 @@ const {ErrorHandler, BAD_REQUEST} = require('../errors');
 const {O_Auth, ActionToken} = require('../dataBase');
 
 module.exports = {
+    isForgotPassValid: (validator) => (req, res, next) => {
+        try {
+            const { error, value } = validator.validate(req.body);
+
+            if (error) {
+                throw new ErrorHandler(error.details[0].message, 400);
+            }
+
+            req.body = value;
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
+
     checkPassword: async (req, res, next) => {
         try {
             const {password} = req.body;
