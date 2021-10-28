@@ -1,144 +1,158 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "June-2021",
+    "title": "NodeJS_Project",
     "version": "1.0",
-    "description": "This is Hello world",
+    "description": "My project",
     "contact": {
-      "email": "kminvict@gia",
-      "name": "Viktor"
+      "email": "makeevgeorgij18@gmail.com",
+      "name": "Georgiy"
     }
   },
   "paths": {
     "/users": {
-      "post": {
-        "tags": ["Users"],
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
         "operationId": "getAllUsers",
-        "description": "This is how to create user",
+        "description": "Return all users",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "okey"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "CreateUser",
+        "description": "Create user",
         "parameters": [
           {
             "name": "name",
             "in": "formData",
-            "default": "Dimas",
+            "default": "username",
             "required": true,
             "type": "string"
           },
           {
             "name": "email",
             "in": "formData",
-            "default": "example@email.com",
+            "default": "user@gmail.com",
             "required": true,
             "type": "string"
           },
           {
             "name": "password",
             "in": "formData",
-            "default": "Hello_World!1",
+            "default": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "formData",
+            "default": "user",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "User was created",
-            "schema": {
-              "$ref": "#/definitions/singleUser"
-            }
-          },
-          "400": {
-            "description": "Just an error",
-            "schema": {
-              "properties": {
-                "msg": {
-                  "type": "string",
-                  "example": "Something went wrong"
-                },
-                "code": {
-                  "type": "number",
-                  "example": 400
-                }
-              }
-            }
+            "description": "okey"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "GetUserById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
           }
         }
       },
-      "get": {
-        "tags": ["Users"],
-        "operationId": "getAllUsers",
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "UpdateUser",
+        "description": "Update user",
+        "responses": {
+          "200": {
+            "description": "okey"
+          }
+        },
         "parameters": [
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Ths is `access_token` from POST /auth endpoint",
+            "name": "id",
+            "in": "path",
             "default": "",
             "required": true,
             "type": "string"
           },
           {
-            "name": "page",
-            "in": "query",
-            "default": 1,
-            "required": false,
-            "type": "number"
+            "name": "name",
+            "required": true,
+            "in": "formData",
+            "type": "string"
           },
           {
-            "name": "perPage",
-            "in": "query",
-            "default": 20,
-            "required": false,
-            "type": "number"
+            "name": "Authorization",
+            "required": true,
+            "type": "string",
+            "in": "header"
           }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Users"
         ],
+        "operationId": "DeleteUser",
+        "description": "Delete user",
         "responses": {
           "200": {
-            "description": "User was created",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/singleUser"
-              }
-            }
-          },
-          "400": {
-            "description": "Just an error",
-            "schema": {
-              "$ref": "#/definitions/commonError"
-            }
+            "description": "okey"
           }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "singleUser": {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "string",
-          "example": "12345qwerty",
-          "description": "MongoDB ID"
         },
-        "email": {
-          "type": "string",
-          "example": "example@email.com"
-        },
-        "name": {
-          "type": "string",
-          "example": "Dimasik"
-        }
-      }
-    },
-    "commonError": {
-      "type": "object",
-      "properties": {
-        "msg": {
-          "type": "string",
-          "example": "Something went wrong"
-        },
-        "code": {
-          "type": "number",
-          "example": 400
-        }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "required": true,
+            "type": "string",
+            "in": "header"
+          }
+        ]
       }
     }
   }
