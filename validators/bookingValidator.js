@@ -6,9 +6,6 @@ const bookingValidator = Joi.object({
         .required(),
     check_out: Joi
         .date()
-        .greater(Joi.ref('check_in'))
-        .disallow(Joi.ref('check_in'))
-        .required()
 });
 
 module.exports = {bookingValidator};

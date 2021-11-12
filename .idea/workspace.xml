@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node project">
-      <change afterPath="$PROJECT_DIR$/configs/apartment_type.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/apartment.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/booking.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/commentController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/Apartment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/Booking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/apartment.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/booking.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/comment.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/apartment.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/booking.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/comment.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/booking.util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/apartmentValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/bookingValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/commentValidator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/model-names.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/model-names.enum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/booking.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/booking.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/booking.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/booking.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/booking.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/booking.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/bookingValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/bookingValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +107,8 @@
       <workItem from="1635289514427" duration="463000" />
       <workItem from="1636409980851" duration="4723000" />
       <workItem from="1636560589683" duration="15079000" />
-      <workItem from="1636675207189" duration="3294000" />
+      <workItem from="1636675207189" duration="3474000" />
+      <workItem from="1636710769224" duration="9169000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -411,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635363726956</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="node project">
+      <created>1636678703888</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1636678703888</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

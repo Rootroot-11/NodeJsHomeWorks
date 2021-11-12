@@ -21,13 +21,14 @@ app.use('/apart', apartmentRouter);
 app.use('/comment', commentRouter);
 app.use('/booking', bookingRouter);
 
-// app.use('*', (err, req, res, next) => {
-//     res
-//         .status(err.status || 500)
-//         .json({
-//             msg: err.message
-//         });
-// });
+// eslint-disable-next-line no-unused-vars
+app.use('*', (err, req, res, next) => {
+    res
+        .status(err.status || 500)
+        .json({
+            msg: err.message
+        });
+});
 
 app.listen(PORT, () => {
     console.log(`App listen ${PORT}`);
