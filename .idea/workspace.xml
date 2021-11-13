@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node project">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/booking.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/booking.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/booking.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/booking.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/booking.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/booking.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/bookingValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/bookingValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +57,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
-    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/reakt6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -108,7 +103,8 @@
       <workItem from="1636409980851" duration="4723000" />
       <workItem from="1636560589683" duration="15079000" />
       <workItem from="1636675207189" duration="3474000" />
-      <workItem from="1636710769224" duration="9169000" />
+      <workItem from="1636710769224" duration="10550000" />
+      <workItem from="1636804393781" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -397,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636678703888</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="node project">
+      <created>1636730726351</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1636730726351</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
