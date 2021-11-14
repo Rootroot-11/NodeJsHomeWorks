@@ -20,12 +20,12 @@ module.exports = {
         }
     },
 
-    checkApartmentIdMiddleware: (req, res, next) => {
+    checkApartmentIdMiddleware: async (req, res, next) => {
         try {
             const {apartment_id: _id} = req.params;
-            const apartmentId = Apartment.findById(_id);
+            const apartmentId = await Apartment.findById(_id);
 
-            if(!apartmentId) {
+            if (!apartmentId) {
                 throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
             }
 
