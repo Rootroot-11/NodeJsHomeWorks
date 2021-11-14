@@ -69,11 +69,11 @@ module.exports = {
         }
     },
 
-    checkBookingIdMiddleware: (req, res, next) => {
+    checkBookingIdMiddleware: async (req, res, next) => {
         try {
             const {booking_id} = req.params;
 
-            const bookingById = Booking.findOne({_id: booking_id});
+            const bookingById = await Booking.findOne({_id: booking_id});
 
             if (!bookingById) {
                 throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);

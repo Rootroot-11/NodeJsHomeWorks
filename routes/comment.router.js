@@ -4,7 +4,6 @@ const router = require('express').Router();
 
 router.post('/:user_id/:apartment_id',
     authMiddleware.checkAccessToken,
-    // commentMiddleware.isCommentValid,
     userByIdMiddleware.checkIdMiddleware,
     apartmentMiddleware.checkApartmentIdMiddleware,
     commentController.createComment
