@@ -18,18 +18,18 @@ const apartmentSchema = new Schema ( {
         enum: Object.values(apartmentTypeEnum),
         required: true
     },
-    // apartment_squaring: {
-    //     type: Number,
-    //     required: true
-    // },
+    apartment_squaring: {
+        type: Number,
+        required: true
+    },
     amount_places: {
         type: Number,
         required: true
     },
-    price: {
-        type: Number,
-        required: true
-    },
+    // price: {
+    //     type: Number,
+    //     required: true
+    // },
     user_id: {
         type: Schema.Types.ObjectId,
         required: true,

@@ -22,12 +22,12 @@ const apartmentValidator = Joi.object({
     amount_places: Joi
         .number()
         .required(),
-    price: Joi
-        .number()
-        .required(),
-    // apartment_squaring: Joi
+    // price: Joi
     //     .number()
     //     .required(),
+    apartment_squaring: Joi
+        .number()
+        .required(),
     // description: Joi
     //     .string()
     //     .required()

@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node project">
-      <change afterPath="$PROJECT_DIR$/cron/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/remove-old-token.job.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/apartment.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/apartment.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apartment.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apartment.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/Apartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/Apartment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/apartmentValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/apartmentValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +106,8 @@
       <workItem from="1636675207189" duration="3474000" />
       <workItem from="1636710769224" duration="10550000" />
       <workItem from="1636804393781" duration="355000" />
-      <workItem from="1636912710116" duration="2803000" />
+      <workItem from="1636912710116" duration="4962000" />
+      <workItem from="1636984254509" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -414,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636804732895</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="node project">
+      <created>1636924848996</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1636924848996</updated>
+    </task>
+    <task id="LOCAL-00045" summary="node project">
+      <created>1636925095046</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1636925095046</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
