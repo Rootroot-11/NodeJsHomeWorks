@@ -1,7 +1,7 @@
 const {BAD_REQUEST, USER_NOT_FOUND} = require('../errors');
 const ErrorHandler = require('../errors/ErrorHandler');
 const {apartmentValidator} = require('../validators');
-const Apartment = require('../dataBase/Apartment');
+const {Apartment} = require('../dataBase');
 
 module.exports = {
     isApartmentBodyValid: (req, res, next) => {

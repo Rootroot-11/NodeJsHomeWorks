@@ -1,4 +1,4 @@
-const Apartment = require('../dataBase/Apartment');
+const {Apartment} = require('../dataBase');
 const {USER_DELETE} = require('../errors');
 
 module.exports = {

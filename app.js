@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const fileUpload = require('express-fileupload');
@@ -13,7 +12,6 @@ const app = express();
 mongoose.connect(MONGO_CONNECT_URL);
 
 app.use(helmet());
-// app.use(cors({origin: _configureCors}));
 app.use(rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100 // limit each IP to 100 requests per windowMs
