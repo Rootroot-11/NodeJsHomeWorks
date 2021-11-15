@@ -17,7 +17,7 @@ router.get(
 );
 
 router.get(
-    '/:apartment_id',
+    '/:user_id',
     apartmentMiddleware.checkApartmentIdMiddleware,
     apartmentController.getApartmentById);
 
@@ -30,7 +30,6 @@ router.put(
     '/:apartment_id',
     authMiddleware.checkAccessToken,
     apartmentMiddleware.checkApartmentIdMiddleware,
-    apartmentMiddleware.isApartmentBodyValid,
     apartmentController.updateApartment);
 
 module.exports = router;

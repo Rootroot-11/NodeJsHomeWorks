@@ -1,4 +1,4 @@
-const {BAD_REQUEST, USER_NOT_FOUND} = require('../errors');
+const {BAD_REQUEST, APARTMENT_NOT_EXIST} = require('../errors');
 const ErrorHandler = require('../errors/ErrorHandler');
 const {apartmentValidator} = require('../validators');
 const Apartment = require('../dataBase/Apartment');
@@ -26,7 +26,7 @@ module.exports = {
             const apartmentId = await Apartment.findById(_id);
 
             if (!apartmentId) {
-                throw new ErrorHandler(USER_NOT_FOUND.message, USER_NOT_FOUND.status);
+                throw new ErrorHandler(APARTMENT_NOT_EXIST.message, APARTMENT_NOT_EXIST.status);
             }
 
             req.apartment = apartmentId;

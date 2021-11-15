@@ -42,6 +42,11 @@ module.exports = {
     WRONG_TOKEN: {
         message: 'Wrong token',
         status: 401
+    },
+
+    APARTMENT_NOT_EXIST: {
+        message: 'Apartment not found',
+        status: 404
     }
 
 };
