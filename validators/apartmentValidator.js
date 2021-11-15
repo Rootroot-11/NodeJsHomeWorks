@@ -27,9 +27,6 @@ const apartmentValidator = Joi.object({
         .required(),
     apartment_squaring: Joi
         .number()
-        .required(),
-    description: Joi
-        .string()
         .required()
 });
 

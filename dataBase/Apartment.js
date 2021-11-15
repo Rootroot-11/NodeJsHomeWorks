@@ -33,10 +33,6 @@ const apartmentSchema = new Schema ( {
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'user'
-    },
-    description: {
-        type: String,
-        required: true
     }
 
 }, {timestamps: true});
