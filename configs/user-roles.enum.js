@@ -1,5 +1,5 @@
 module.exports = {
     ADMIN: 'admin',
-    MANAGER: 'manager',
+    DRIVER: 'driver',
     USER: 'user'
 };

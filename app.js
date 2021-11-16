@@ -8,6 +8,8 @@ require('dotenv').config();
 
 const swaggerJson = require('./docs/swagger.json');
 const {MONGO_CONNECT_URL, PORT, NODE_ENV, ALLOWED_ORIGIN} = require('./configs/config');
+const {authRouter, userRouter} = require('./routes');
+const ErrorHandler = require('./errors/ErrorHandler');
 
 const app = express();
 
@@ -28,8 +30,6 @@ if (NODE_ENV === 'dev') {
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
-const {authRouter, userRouter} = require('./routes');
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerJson));
 app.use('/auth', authRouter);
