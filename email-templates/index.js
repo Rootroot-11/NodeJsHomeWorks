@@ -24,6 +24,11 @@ module.exports = {
     [emailActionsEnum.FORGOT_PASSWORD]: {
         templateName: 'forgot-password',
         subject: 'Everybody forgot something'
+    },
+
+    [emailActionsEnum.RESERVED]: {
+        templateName: 'reserved',
+        subject: 'Your booking is activate.'
     }
 
 };

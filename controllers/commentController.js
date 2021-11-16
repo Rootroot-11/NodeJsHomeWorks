@@ -38,9 +38,9 @@ module.exports = {
 
     deleteComment: async (req, res, next) => {
         try {
-            const {user_id} = req.params;
+            const {comment_id:_id} = req.params;
 
-            await Comment.findByIdAndDelete(user_id);
+            await Comment.deleteOne({_id});
 
             res.json(USER_DELETE.status, USER_DELETE.message);
         } catch (e) {

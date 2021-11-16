@@ -1,19 +1,21 @@
 const dayJs = require('dayjs');
-const {calculatePrice} = require('../util');
-const { Booking, Apartment} = require('../dataBase');
+const {calculatePrice} = require('../util/booking.util');
+const {Booking, Apartment, User} = require('../dataBase');
 const {emailService} = require('../service');
-// const {APPROVE_TO_RESERVE, WAITING_FOR_CONFIRM} = require('../configs/email-action.enum');
 const {CREATED, USER_DELETE} = require('../errors');
 const {REFUSE_TO_RENT} = require('../configs');
+const {RESERVED} = require('../configs/email-action.enum');
 
 module.exports = {
     createBooking: async (req, res, next) => {
         try {
             const {apartment_id} = req.params;
-            const {check_in, check_out} = req.body;
-            // const {user_id: apartmentUserId, price: apartmentPrice, approve} = req.apartment;
 
-            // const {email: userEmail, _id: user_id} = req.user;
+            const {check_in, check_out} = req.body;
+
+            const {user_id: apartmentUserId, price: apartmentPrice, approve} = req.apartment;
+
+            const {email: userEmail, _id: user_id} = req.user;
 
             const booking_start = dayJs(check_in)
                 .valueOf();
@@ -22,7 +24,7 @@ module.exports = {
 
             const price = calculatePrice(check_in, check_out, apartmentPrice);
 
-            // const {email: apartmentEmail, name: userName} = await User.findOne({_id: apartmentUserId});
+            const {email: apartmentEmail, name: userName} = await User.findOne({_id: apartmentUserId});
 
             if (approve) {
                 const reservedApartment = await Booking.create({
@@ -34,27 +36,25 @@ module.exports = {
                     isActive: false
                 });
 
-                // await emailService.sendMail(apartmentEmail,
-                //     APPROVE_TO_RESERVE,
-                //     {
-                //         userName,
-                //         check_in,
-                //         check_out,
-                //         viewProfile: `${config.LOCALHOST_5000}users/${user_id}`
-                //     });
+                await emailService.sendMail(apartmentEmail,
+                    emailActionsEnum.RESERVED,
+                    {
+                        userName,
+                        check_in,
+                        check_out,
+                        viewProfile: `${config.LOCALHOST_5000}users/${user_id}`
+                    });
+                await emailService.sendMail(userEmail, RESERVED);
 
-                // await emailService.sendMail(userEmail, WAITING_FOR_CONFIRM);
-
-                res.json(reservedApartment, CREATED.status);
+                res.json(reservedApartment);
 
                 return;
             }
-            const reservedApartments = await Booking.create({user_id, apartment_id, booking_start, booking_end, price});
-            // await emailService.sendMail(userEmail, RESERVED);
-            //
-            // await emailService.sendMail(apartmentEmail, APARTMENT_RESERVED, {userName, check_in, check_out});
 
-            res.json(reservedApartments, CREATED.status);
+            const reservedApartment = await Booking.create({user_id, apartment_id, booking_start,
+                booking_end, price});
+
+            res.json(reservedApartment);
         } catch (e) {
             next(e);
         }

@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node project">
+      <change afterPath="$PROJECT_DIR$/email-templates/reserved.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/errors.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/apartment.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/apartment.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apartment.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apartment.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/email-action.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/email-action.enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/booking.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/booking.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/commentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/commentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/email-templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/booking.util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/booking.util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
       <list>
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="Pug File" />
         <option value="JavaScript File" />
+        <option value="Pug File" />
       </list>
     </option>
   </component>
@@ -60,7 +62,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/AngularHomeWorks" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -109,14 +111,7 @@
       <workItem from="1636710769224" duration="10550000" />
       <workItem from="1636804393781" duration="355000" />
       <workItem from="1636912710116" duration="4962000" />
-      <workItem from="1636984254509" duration="5415000" />
-    </task>
-    <task id="LOCAL-00001" summary="node 3 lec">
-      <created>1633774768896</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1633774768896</updated>
+      <workItem from="1636984254509" duration="14858000" />
     </task>
     <task id="LOCAL-00002" summary="node 4 homework">
       <created>1633972878101</created>
@@ -454,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636988190084</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="node project">
+      <created>1636992465628</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1636992465628</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
