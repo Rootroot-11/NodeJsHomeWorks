@@ -1,15 +1,21 @@
-const User = require('../dataBase/User');
-const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD, EMAIL_EXIST, BAD_REQUEST, ACCESS} = require('../errors');
+const {User} = require('../dataBase');
+const {ErrorHandler, WRONG_EMAIL_OR_PASSWORD, EMAIL_EXIST, BAD_REQUEST,
+    ACCESS, USERNAME_EXIST} = require('../errors');
 
 module.exports = {
     createUserMiddleware: async (req, res, next) => {
         try {
-            const {email} = req.body;
+            const {email, user_name} = req.body;
 
             const userByEmail = await User.findOne({email}).select('-password');
+            const userName = await User.findOne({user_name});
 
             if (userByEmail) {
                 throw new ErrorHandler(EMAIL_EXIST.message, EMAIL_EXIST.status);
+            }
+
+            if (userName) {
+                throw new ErrorHandler(USERNAME_EXIST.message, USERNAME_EXIST.status);
             }
 
             next();

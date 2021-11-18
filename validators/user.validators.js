@@ -4,11 +4,25 @@ const { EMAIL_REGEXP, PASSWORD_REGEXP } = require('../configs');
 const userRoles = require('../configs/user-roles.enum');
 
 const createUserValidator = Joi.object({
-    name: Joi
+    user_name: Joi
         .string()
         .alphanum()
         .min(2)
-        .max(30)
+        .max(20)
+        .trim()
+        .required(),
+    first_name: Joi
+        .string()
+        .alphanum()
+        .min(2)
+        .max(20)
+        .trim()
+        .required(),
+    last_name: Joi
+        .string()
+        .alphanum()
+        .min(2)
+        .max(20)
         .trim()
         .required(),
     email: Joi
@@ -16,20 +30,35 @@ const createUserValidator = Joi.object({
         .regex(EMAIL_REGEXP)
         .trim()
         .required(),
-    role: Joi
-        .string().allow(...Object.values(userRoles)),
     password: Joi
         .string()
         .regex(PASSWORD_REGEXP)
         .required(),
+    user_type: Joi
+        .string().allow(...Object.values(userRoles))
+        .required(),
 });
 
 const updateUserValidator = Joi.object({
-    name: Joi
+    user_name: Joi
         .string()
         .alphanum()
         .min(2)
-        .max(30)
+        .max(20)
+        .trim()
+        .required(),
+    first_name: Joi
+        .string()
+        .alphanum()
+        .min(2)
+        .max(20)
+        .trim()
+        .required(),
+    last_name: Joi
+        .string()
+        .alphanum()
+        .min(2)
+        .max(20)
         .trim()
         .required(),
 });

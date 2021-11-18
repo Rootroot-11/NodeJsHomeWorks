@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const swaggerJson = require('./docs/swagger.json');
 const {MONGO_CONNECT_URL, PORT, NODE_ENV, ALLOWED_ORIGIN} = require('./configs/config');
-const {authRouter, userRouter} = require('./routes');
+const {userRouter} = require('./routes');
 const ErrorHandler = require('./errors/ErrorHandler');
 
 const app = express();
@@ -32,8 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerJson));
-app.use('/auth', authRouter);
 app.use('/users', userRouter);
+
 // eslint-disable-next-line no-unused-vars
 app.use('*', (err, req, res, next) => {
     res

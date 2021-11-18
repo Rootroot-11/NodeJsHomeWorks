@@ -1,4 +1,4 @@
-const User = require('../dataBase/User');
+const {User} = require('../dataBase');
 const { ErrorHandler, USER_NOT_FOUND } = require('../errors');
 
 module.exports = {

@@ -1,6 +1,11 @@
 module.exports = {
     EMAIL_EXIST: {
-        message: 'Email already exist',
+        message: 'Email already exists',
+        status: 404
+    },
+
+    USERNAME_EXIST: {
+        message: 'UserName already exists',
         status: 404
     },
 

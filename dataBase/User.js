@@ -5,9 +5,9 @@ const {passwordService} = require('../service');
 const userSchema = new Schema({
     user_name: {
         type: String,
-        required: true,
         trim: true,
-        unique: true
+        unique: true,
+        required: true,
     },
     first_name: {
         type: String,
@@ -22,19 +22,19 @@ const userSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        required: true,
-        trim: true
+        trim: true,
+        required: true
     },
     password: {
         type: String,
-        required: true,
         trim: true,
-        select: false
+        select: false,
+        required: true
     },
     user_type: {
         type: String,
-        default: userRoles.USER,
-        enum: Object.values(userRoles)
+        enum: Object.values(userRoles),
+        required: true
     },
 }, {timestamps: true});
 

@@ -4,12 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node 10">
+    <list default="true" id="97652027-bc7a-41dc-9cc6-4ebd3d67350a" name="Changes" comment="node task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/user-roles.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/configs/user-roles.enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/ActionToken.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/O_Auth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/errors.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/errors.list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/errors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth.middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/userByIdMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/jwt.service.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/auth.validators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/newPasswordValidator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/sendEmailValidator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user.validators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +129,7 @@
       <workItem from="1635958026320" duration="115000" />
       <workItem from="1635958305296" duration="644000" />
       <workItem from="1636234787192" duration="494000" />
+      <workItem from="1637205874015" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="node 3 lec">
       <created>1633774768896</created>
@@ -395,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635382452407</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="node task">
+      <created>1637102565426</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1637102565426</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +459,7 @@
     <MESSAGE value="node 9" />
     <MESSAGE value="node 10" />
     <MESSAGE value="node 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 11" />
+    <MESSAGE value="node task" />
+    <option name="LAST_COMMIT_MESSAGE" value="node task" />
   </component>
 </project>

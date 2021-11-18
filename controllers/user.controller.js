@@ -1,5 +1,5 @@
 const {User} = require('../dataBase');
-const { emailService, passwordService, userService } = require('../service');
+const { emailService, passwordService } = require('../service');
 const { userUtil } = require('../util');
 const { UPDATE, WELCOME } = require('../configs');
 const { CREATED, USER_DELETE } = require('../errors');
@@ -7,7 +7,7 @@ const { CREATED, USER_DELETE } = require('../errors');
 module.exports = {
     getUsers: async (req, res, next) => {
         try {
-            const users = await userService.getAllUsers(req.query);
+            const users = await User.find();
 
             res.json(users);
         } catch (e) {
